@@ -1,0 +1,73 @@
+ConceptScheme URI,http://purl.org/datacite/v4.4,Main GUPRI (i.e. PID) under which all terms are defined. Preference is to use PURLs or W3IDs as they provide permanent resolvable identifiers.
+"Prefixes for controlled vocabularies, schema and ontologies"
+PREFIX,datacite,http://purl.org/datacite/v4.4/,Prefix for our controlled vocabulary since it is rather tedious to write long URLs all the time
+PREFIX,skos,http://www.w3.org/2004/02/skos/core#,Prefix for SKOS Ontology. This ontology is which our base for defining terms.
+PREFIX,pav,http://purl.org/pav/ ,"Prefix for Provenance, Authoring and Versioning Ontology which properties such as version and createdOn we will use to describe our controlled vocabulary"
+PREFIX,dct,http://purl.org/dc/terms/ ,"Prefix for Dublin Core (Terms) Ontology which properties such as title, description, rights, source, etc. we will use to describe our controlled vocabulary as well to define its terms"
+Metadata about vocabulary
+
+dct:title,Datacite Controlled Terms,Title of the vocabulary
+dct:description,Controlled vocabulary of terms used in Datacite Schema 4.4,Description of the controlled vocabulary
+dct:contributor,https://orcid.org/0000-0002-9381-9693,"An ORCID ID of the vocabulary creator, repeat this row as needed."
+dct:rights,https://spdx.org/licenses/CC0-1.0,License under which the vocabulary is provided
+pav:version,0.1.0,Vocabulary version
+pav:createdOn,2022-05-03T12:00+02:00,Date when vocabulary was initially created
+pav:lastUpdatedOn,2022-05-03T12:00+02:00,Date of the last vocabulary update
+Definition of terms
+
+Identifier,skos:prefLabel@en,skos:definition@en,"skos:altLabel(separator="","")","dct:source(separator="","")","skos:broader(separator="","")","skos:exactMatch(separator="","")","skos:closeMatch(separator="","")",skos:editorialNote@en,"dct:creator(separator="","")","dct:contributor(separator="","")"
+datacite:ResourceTypeGeneral,Resource Type General,This is a set of controlled terms from DataCite/DCMI for the category of resource being described.
+datacite:Audiovisual,Audiovisual,,,,datacite:ResourceTypeGeneral
+datacite:Book,Book,,,,datacite:ResourceTypeGeneral
+datacite:BookChapter,BookChapter,,,,datacite:ResourceTypeGeneral
+datacite:Collection,Collection,,,,datacite:ResourceTypeGeneral
+datacite:ComputationalNotebook,ComputationalNotebook,,,,datacite:ResourceTypeGeneral
+datacite:ConferencePaper,ConferencePaper,,,,datacite:ResourceTypeGeneral
+datacite:ConferenceProceeding,ConferenceProceeding,,,,datacite:ResourceTypeGeneral
+datacite:DataPaper,DataPaper,,,,datacite:ResourceTypeGeneral
+datacite:Dataset,Dataset,,,,datacite:ResourceTypeGeneral
+datacite:Dissertation,Dissertation,,,,datacite:ResourceTypeGeneral
+datacite:Event,Event,,,,datacite:ResourceTypeGeneral
+datacite:Image,Image,,,,datacite:ResourceTypeGeneral
+datacite:InteractiveResource,InteractiveResource,,,,datacite:ResourceTypeGeneral
+datacite:Journal,Journal,,,,datacite:ResourceTypeGeneral
+datacite:JournalArticle,JournalArticle,,,,datacite:ResourceTypeGeneral
+datacite:Model,Model,,,,datacite:ResourceTypeGeneral
+datacite:OutputManagementPlan,OutputManagementPlan,,,,datacite:ResourceTypeGeneral
+datacite:PeerReview,PeerReview,,,,datacite:ResourceTypeGeneral
+datacite:PhysicalObject,PhysicalObject,,,,datacite:ResourceTypeGeneral
+datacite:Preprint,Preprint,,,,datacite:ResourceTypeGeneral
+datacite:Report,Report,,,,datacite:ResourceTypeGeneral
+datacite:Service,Service,,,,datacite:ResourceTypeGeneral
+datacite:Software,Software,,,,datacite:ResourceTypeGeneral
+datacite:Sound,Sound,,,,datacite:ResourceTypeGeneral
+datacite:Standard,Standard,,,,datacite:ResourceTypeGeneral
+datacite:Text,Text,,,,datacite:ResourceTypeGeneral
+datacite:Workflow,Workflow,,,,datacite:ResourceTypeGeneral
+datacite:Other,Other,,,,datacite:ResourceTypeGeneral
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:
+datacite:

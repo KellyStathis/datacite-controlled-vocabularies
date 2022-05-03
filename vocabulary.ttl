@@ -1,0 +1,186 @@
+@prefix datacite: <http://purl.org/datacite/v4.4/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/datacite/v4.4> a skos:ConceptScheme;
+  dct:contributor <https://orcid.org/0000-0002-9381-9693>;
+  dct:description "Controlled vocabulary of terms used in Datacite Schema 4.4"@en;
+  dct:rights <https://spdx.org/licenses/CC0-1.0>;
+  dct:title "Datacite Controlled Terms"@en;
+  pav:createdOn "2022-05-03T12:00+02:00"@en;
+  pav:lastUpdatedOn "2022-05-03T12:00+02:00"@en;
+  pav:version "0.1.0"@en;
+  skos:hasTopConcept <http://purl.org/datacite/v4.4/>, datacite:ResourceTypeGeneral .
+
+datacite:ResourceTypeGeneral a skos:Concept;
+  skos:definition "This is a set of controlled terms from DataCite/DCMI for the category of resource being described."@en;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:narrower datacite:Audiovisual, datacite:Book, datacite:BookChapter, datacite:Collection,
+    datacite:ComputationalNotebook, datacite:ConferencePaper, datacite:ConferenceProceeding,
+    datacite:DataPaper, datacite:Dataset, datacite:Dissertation, datacite:Event, datacite:Image,
+    datacite:InteractiveResource, datacite:Journal, datacite:JournalArticle, datacite:Model,
+    datacite:Other, datacite:OutputManagementPlan, datacite:PeerReview, datacite:PhysicalObject,
+    datacite:Preprint, datacite:Report, datacite:Service, datacite:Software, datacite:Sound,
+    datacite:Standard, datacite:Text, datacite:Workflow;
+  skos:prefLabel "Resource Type General"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+
+datacite:Audiovisual a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Audiovisual"@en .
+
+datacite:Book a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Book"@en .
+
+datacite:BookChapter a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "BookChapter"@en .
+
+datacite:Collection a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Collection"@en .
+
+datacite:ComputationalNotebook a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "ComputationalNotebook"@en .
+
+datacite:ConferencePaper a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "ConferencePaper"@en .
+
+datacite:ConferenceProceeding a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "ConferenceProceeding"@en .
+
+datacite:DataPaper a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "DataPaper"@en .
+
+datacite:Dataset a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Dataset"@en .
+
+datacite:Dissertation a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Dissertation"@en .
+
+datacite:Event a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Event"@en .
+
+datacite:Image a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Image"@en .
+
+datacite:InteractiveResource a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "InteractiveResource"@en .
+
+datacite:Journal a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Journal"@en .
+
+datacite:JournalArticle a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "JournalArticle"@en .
+
+datacite:Model a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Model"@en .
+
+datacite:OutputManagementPlan a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "OutputManagementPlan"@en .
+
+datacite:PeerReview a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "PeerReview"@en .
+
+datacite:PhysicalObject a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "PhysicalObject"@en .
+
+datacite:Preprint a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Preprint"@en .
+
+datacite:Report a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Report"@en .
+
+datacite:Service a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Service"@en .
+
+datacite:Software a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Software"@en .
+
+datacite:Sound a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Sound"@en .
+
+datacite:Standard a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Standard"@en .
+
+datacite:Text a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Text"@en .
+
+datacite:Workflow a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Workflow"@en .
+
+datacite:Other a skos:Concept;
+  skos:broader datacite:ResourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Other"@en .
+
+<http://purl.org/datacite/v4.4/> a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:topConceptOf <http://purl.org/datacite/v4.4> .
