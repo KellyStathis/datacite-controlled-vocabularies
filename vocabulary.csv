@@ -44,7 +44,7 @@ datacite:Sound,Sound,,,,datacite:ResourceTypeGeneral
 datacite:Standard,Standard,,,,datacite:ResourceTypeGeneral
 datacite:Text,Text,,,,datacite:ResourceTypeGeneral
 datacite:Workflow,Workflow,,,,datacite:ResourceTypeGeneral
-datacite:Other,Other,,,,"datacite:ResourceTypeGeneral, datacite:DescriptionType, datacite:ContributorType"
+datacite:Other,Other,,,,datacite:ResourceTypeGeneral
 datacite:RelatedIdentifierType,Related Identifier Type
 datacite:ARK,ARK,,,,datacite:RelatedIdentifierType
 datacite:arXiv,arXiv,,,,datacite:RelatedIdentifierType
@@ -117,6 +117,7 @@ datacite:Submitted,Submitted,,,,datacite:DateType
 datacite:Updated,Updated,,,,datacite:DateType
 datacite:Valid,Valid,,,,datacite:DateType
 datacite:Withdrawn,Withdrawn,,,,datacite:DateType
+datacite:OtherDescriptionType,Other,,,,datacite:DateType
 datacite:ContributorType,Contributor Type
 datacite:ContactPerson,ContactPerson,,,,datacite:ContributorType
 datacite:DataCollector,DataCollector,,,,datacite:ContributorType
@@ -138,6 +139,7 @@ datacite:RightsHolder,RightsHolder,,,,datacite:ContributorType
 datacite:Sponsor,Sponsor,,,,datacite:ContributorType
 datacite:Supervisor,Supervisor,,,,datacite:ContributorType
 datacite:WorkPackageLeader,WorkPackageLeader,,,,datacite:ContributorType
+datacite:OtherContributorType,Other,,,,datacite:ContributorType
 datacite:ResourceCreatorType,Resource Creator Type
 datacite:Person,Person,,,,datacite:ResourceCreatorType
 datacite:Organization,Organization,,,,datacite:ResourceCreatorType

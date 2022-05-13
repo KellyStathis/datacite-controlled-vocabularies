@@ -179,7 +179,7 @@ datacite:Workflow a skos:Concept;
   skos:prefLabel "Workflow"@en .
 
 datacite:Other a skos:Concept;
-  skos:broader datacite:ContributorType, datacite:DescriptionType, datacite:ResourceTypeGeneral;
+  skos:broader datacite:ResourceTypeGeneral;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:prefLabel "Other"@en .
 
@@ -462,8 +462,8 @@ datacite:Obsoletes a skos:Concept;
 
 datacite:DescriptionType a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Abstract, datacite:Methods, datacite:Other, datacite:SeriesInformation,
-    datacite:TableOfContents, datacite:TechnicalInfo;
+  skos:narrower datacite:Abstract, datacite:Methods, datacite:SeriesInformation, datacite:TableOfContents,
+    datacite:TechnicalInfo;
   skos:prefLabel "Description Type"@en;
   skos:topConceptOf <http://purl.org/datacite/v4.4> .
 
@@ -495,8 +495,8 @@ datacite:TechnicalInfo a skos:Concept;
 datacite:DateType a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:narrower datacite:Accepted, datacite:AvailableCopyrighted, datacite:Collected,
-    datacite:Created, datacite:Description, datacite:Issued, datacite:Submitted, datacite:Updated,
-    datacite:Valid, datacite:Withdrawn;
+    datacite:Created, datacite:Description, datacite:Issued, datacite:OtherDescriptionType,
+    datacite:Submitted, datacite:Updated, datacite:Valid, datacite:Withdrawn;
   skos:prefLabel "Date Type"@en;
   skos:topConceptOf <http://purl.org/datacite/v4.4> .
 
@@ -550,11 +550,16 @@ datacite:Withdrawn a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:prefLabel "Withdrawn"@en .
 
+datacite:OtherDescriptionType a skos:Concept;
+  skos:broader datacite:DateType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Other"@en .
+
 datacite:ContributorType a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:narrower datacite:ContactPerson, datacite:DataCollector, datacite:DataCurator,
     datacite:DataManager, datacite:Distributor, datacite:Editor, datacite:HostingInstitution,
-    datacite:Other, datacite:Producer, datacite:ProjectLeader, datacite:ProjectManager,
+    datacite:OtherContributorType, datacite:Producer, datacite:ProjectLeader, datacite:ProjectManager,
     datacite:ProjectMember, datacite:RegistrationAgency, datacite:RegistrationAuthority,
     datacite:RelatedPerson, datacite:ResearchGroup, datacite:Researcher, datacite:RightsHolder,
     datacite:Sponsor, datacite:Supervisor, datacite:WorkPackageLeader;
@@ -660,6 +665,11 @@ datacite:WorkPackageLeader a skos:Concept;
   skos:broader datacite:ContributorType;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:prefLabel "WorkPackageLeader"@en .
+
+datacite:OtherContributorType a skos:Concept;
+  skos:broader datacite:ContributorType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Other"@en .
 
 datacite:ResourceCreatorType a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
