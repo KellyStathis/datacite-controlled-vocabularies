@@ -141,11 +141,11 @@ datacite:WorkPackageLeader,WorkPackageLeader,,,,datacite:ContributorType
 datacite:ResourceCreatorType,Resource Creator Type
 datacite:Person,Person,,,,datacite:ResourceCreatorType
 datacite:Organization,Organization,,,,datacite:ResourceCreatorType
-datacite:
-datacite:
-datacite:
-datacite:
-datacite:
+datacite:TitleType,Title Type
+datacite:AlternativeTitle,AlternativeTitle,,,,datacite:TitleType
+datacite:Subtitle,Subtitle,,,,datacite:TitleType
+datacite:TranslatedTitle,TranslatedTitle,,,,datacite:TitleType
+datacite:OtherTitle,Other,,,,datacite:TitleType
 datacite:
 datacite:
 datacite:

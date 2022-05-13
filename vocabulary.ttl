@@ -28,7 +28,7 @@
   pav:version "0.1.0"@en;
   skos:hasTopConcept <http://purl.org/datacite/v4.4/>, datacite:ContributorType, datacite:DateType,
     datacite:DescriptionType, datacite:RelatedIdentifierType, datacite:RelationType, datacite:ResourceCreatorType,
-    datacite:ResourceTypeGeneral .
+    datacite:ResourceTypeGeneral, datacite:TitleType .
 
 datacite:ResourceTypeGeneral a skos:Concept;
   skos:definition "This is a set of controlled terms from DataCite/DCMI for the category of resource being described."@en;
@@ -676,6 +676,32 @@ datacite:Organization a skos:Concept;
   skos:broader datacite:ResourceCreatorType;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:prefLabel "Organization"@en .
+
+datacite:TitleType a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:narrower datacite:AlternativeTitle, datacite:OtherTitle, datacite:Subtitle, datacite:TranslatedTitle;
+  skos:prefLabel "Title Type"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+
+datacite:AlternativeTitle a skos:Concept;
+  skos:broader datacite:TitleType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "AlternativeTitle"@en .
+
+datacite:Subtitle a skos:Concept;
+  skos:broader datacite:TitleType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Subtitle"@en .
+
+datacite:TranslatedTitle a skos:Concept;
+  skos:broader datacite:TitleType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "TranslatedTitle"@en .
+
+datacite:OtherTitle a skos:Concept;
+  skos:broader datacite:TitleType;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Other"@en .
 
 <http://purl.org/datacite/v4.4/> a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
