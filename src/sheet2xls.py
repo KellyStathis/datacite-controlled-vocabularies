@@ -5,8 +5,8 @@ import json
 import csv
 
 # Local run only
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
 client = json.loads(os.environ["CLIENT"])
 
@@ -60,6 +60,8 @@ with open("vocabulary.csv") as csv_input:
                     row.append("")
                     i +=1
             csvwriter.writerow(row)
+    csv_output.close()
+csv_input.close()
 
 os.remove("vocabulary.csv")
 os.rename("vocabulary_fixed.csv", "vocabulary.csv")
