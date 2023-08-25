@@ -18,7 +18,7 @@ jobs:
   sheet2rdf:
     # The type of runner that the job will run on
     
-    name: Sheet2RDF
+    name: Sheet2RDF_TEST
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
