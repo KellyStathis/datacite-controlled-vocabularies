@@ -46,7 +46,8 @@ jobs:
           CLIENT: ${{secrets.CLIENT}}
           STORAGE: ${{secrets.STORAGE}}
           FILE_NAME: ${{secrets.FILE_NAME}}
-          SHEET_ID: ${{secrets.SHEET_ID}}        
+          SHEET_ID: ${{secrets.SHEET_ID}}
+          SAVE_DIR: ${{secrets.SAVE_DIR}}
         run: |
           conda activate sheet2rdf          
           python ./src/sheet2xls.py
