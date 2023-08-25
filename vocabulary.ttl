@@ -46,6 +46,7 @@ datacite:resourceTypeGeneral a skos:Concept;
 
 datacite:Audiovisual a skos:Concept;
   skos:broader datacite:resourceTypeGeneral;
+  skos:definition "FIXME"@en;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Audiovisual"@en .
 
