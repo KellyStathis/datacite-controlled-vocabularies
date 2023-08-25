@@ -1,3 +1,5 @@
 *DS*Store*
 .idea
 src/.env
+src/client.json
+src/storage.json
