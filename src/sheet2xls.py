@@ -24,7 +24,7 @@ try:
 except:
     print("No storage file on first run - authenticate in browser.")
 
-directory = json.loads(os.environ["SAVE_DIR"])
+directory = os.environ["SAVE_DIR"]
 file_name = directory + os.environ["FILE_NAME"]
 sheet_id = os.environ["SHEET_ID"]
 sheet_obj = Sheets.from_files("client.json", "storage.json")
