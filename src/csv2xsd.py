@@ -3,7 +3,10 @@ import xml.etree.ElementTree as ET
 import os, os.path
 
 def convert_csv_to_xsd():
-    os.chdir("..")
+    cwd = os.getcwd()
+    if cwd.split("/")[-1] == "src":
+        os.chdir("..")
+        
     for vocabulary_name in ["contributorType", "dateType", "descriptionType", "funderIdentifierType", "nameType", "numberType", "relatedIdentifierType", "resourceTypeGeneral", "relationType", "titleType"]:
 
         vocabulary_description = "placeholder" # fixme

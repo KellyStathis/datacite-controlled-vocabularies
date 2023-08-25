@@ -37,7 +37,7 @@ jobs:
           conda create -n csv2xsd python=3.8
           conda activate csv2xsd
           
-      - name: Fetch
+      - name: conversion-csv2xsd
         shell: bash -l {0}
         run: |
           conda activate csv2xsd
