@@ -29,7 +29,9 @@ This workflow is an extension of [excel2rdf](https://github.com/fair-data-collec
 
 In case you want to use **sheet2rdf** in your own work you need to:
 
-1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage.json
+1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage:
+
+- When generating credentials, use type "Desktop App" (formerly "Other").
 
 2. Create following [Github secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets):
 
@@ -41,8 +43,9 @@ In case you want to use **sheet2rdf** in your own work you need to:
 | GRAPH           | graph in the database under which the above RDF vocabulary should be stored                                        | http://purl.org/datacite/v4.4/                                                                                                                          |
 | SHEET_ID        | unique ID of the sheet that will be fetched from Google drive                                                      | [1vmsxnnCRKkKRcJoRRkoQ5499U-IZgKD6ZBtUu41zz1M](https://docs.google.com/spreadsheets/d/1vmsxnnCRKkKRcJoRRkoQ5499U-IZgKD6ZBtUu41zz1M/edit#gid=1198865354) |
 | SPARQL_ENDPOINT | endpoint to which RDF vocabulary is PUT                                                                            | **\*\*\*\***                                                                                                                                            |
-| STORAGE         | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json | **\*\*\*\***                                                                                                                                            |
-| CLIENT          | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json                   | **\*\*\*\***                                                                                                                                            |
+| STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                            |
+| CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json                  | **\*\*\*\***                                                                                                                                            |
+| SAVE_DIR          | location to save output files                  | vocabularies/sheet2rdf   |
 
 ### Citation
 

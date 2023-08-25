@@ -8,6 +8,10 @@ import csv
 from dotenv import load_dotenv
 load_dotenv()
 
+cwd = os.getcwd()
+if cwd.split("/")[-1] == "src":
+    os.chdir("..")
+
 client = json.loads(os.environ["CLIENT"])
 
 with open("client.json", "w") as json_file:
@@ -20,8 +24,8 @@ try:
 except:
     print("No storage file on first run - authenticate in browser.")
 
-
-file_name = os.environ["FILE_NAME"]
+directory = json.loads(os.environ["SAVE_DIR"])
+file_name = directory + os.environ["FILE_NAME"]
 sheet_id = os.environ["SHEET_ID"]
 sheet_obj = Sheets.from_files("client.json", "storage.json")
 sheet = sheet_obj.get(sheet_id)
@@ -48,9 +52,9 @@ df = pd.read_csv(
 df.to_excel(file_name + ".xlsx", index=False, header=False)
 
 # rewrite vocabulary.csv with trailing columns
-with open("vocabulary.csv") as csv_input:
+with open(file_name + ".csv") as csv_input:
     csvreader = csv.reader(csv_input, delimiter=txt_delimiter)
-    with open("vocabulary_fixed.csv", "w") as csv_output:
+    with open(file_name + "_fixed.csv", "w") as csv_output:
         csvwriter = csv.writer(csv_output, delimiter=txt_delimiter)
         for row in csvreader:
             if len(row) < largest_column_count:
@@ -63,7 +67,7 @@ with open("vocabulary.csv") as csv_input:
     csv_output.close()
 csv_input.close()
 
-os.remove("vocabulary.csv")
-os.rename("vocabulary_fixed.csv", "vocabulary.csv")
+os.remove(file_name + ".csv")
+os.rename(file_name + "_fixed.csv", file_name + ".csv")
 os.remove("client.json")
 os.remove("storage.json")
