@@ -108,7 +108,8 @@ datacite:TableOfContents,TableOfContents,,,,datacite:DescriptionType
 datacite:TechnicalInfo,TechnicalInfo,,,,datacite:DescriptionType
 datacite:DateType,Date Type
 datacite:Accepted,Accepted,,,,datacite:DateType
-datacite:AvailableCopyrighted,Available Copyrighted,,,,datacite:DateType
+datacite:Available,Available,,,,datacite:DateType
+datacite:Copyrighted,Copyrighted
 datacite:Collected,Collected,,,,datacite:DateType
 datacite:Description,Description,,,,datacite:DateType
 datacite:Created,Created,,,,datacite:DateType

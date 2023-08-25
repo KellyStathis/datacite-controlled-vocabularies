@@ -26,9 +26,9 @@
   pav:createdOn "2022-05-03T12:00+02:00"@en;
   pav:lastUpdatedOn "2022-05-03T12:00+02:00"@en;
   pav:version "0.1.0"@en;
-  skos:hasTopConcept <http://purl.org/datacite/v4.4/>, datacite:ContributorType, datacite:DateType,
-    datacite:DescriptionType, datacite:RelatedIdentifierType, datacite:RelationType, datacite:ResourceCreatorType,
-    datacite:ResourceTypeGeneral, datacite:TitleType .
+  skos:hasTopConcept <http://purl.org/datacite/v4.4/>, datacite:ContributorType, datacite:Copyrighted,
+    datacite:DateType, datacite:DescriptionType, datacite:RelatedIdentifierType, datacite:RelationType,
+    datacite:ResourceCreatorType, datacite:ResourceTypeGeneral, datacite:TitleType .
 
 datacite:ResourceTypeGeneral a skos:Concept;
   skos:definition "This is a set of controlled terms from DataCite/DCMI for the category of resource being described."@en;
@@ -494,9 +494,9 @@ datacite:TechnicalInfo a skos:Concept;
 
 datacite:DateType a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Accepted, datacite:AvailableCopyrighted, datacite:Collected,
-    datacite:Created, datacite:Description, datacite:Issued, datacite:OtherDescriptionType,
-    datacite:Submitted, datacite:Updated, datacite:Valid, datacite:Withdrawn;
+  skos:narrower datacite:Accepted, datacite:Available, datacite:Collected, datacite:Created,
+    datacite:Description, datacite:Issued, datacite:OtherDescriptionType, datacite:Submitted,
+    datacite:Updated, datacite:Valid, datacite:Withdrawn;
   skos:prefLabel "Date Type"@en;
   skos:topConceptOf <http://purl.org/datacite/v4.4> .
 
@@ -505,10 +505,15 @@ datacite:Accepted a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.4>;
   skos:prefLabel "Accepted"@en .
 
-datacite:AvailableCopyrighted a skos:Concept;
+datacite:Available a skos:Concept;
   skos:broader datacite:DateType;
   skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Available Copyrighted"@en .
+  skos:prefLabel "Available"@en .
+
+datacite:Copyrighted a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:prefLabel "Copyrighted"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.4> .
 
 datacite:Collected a skos:Concept;
   skos:broader datacite:DateType;
