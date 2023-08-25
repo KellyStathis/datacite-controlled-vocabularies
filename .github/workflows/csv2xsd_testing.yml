@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+name: CSV2XSD_TEST
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  sheet2rdf:
+    # The type of runner that the job will run on
+    
+    name: CSV2XSD_TEST
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2    
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: "3.8"
+      - name: Prepare
+        shell: bash -l {0}   
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git pull        
+          conda create -n csv2xsd python=3.8
+          conda activate csv2xsd
+          
+      - name: Fetch
+        shell: bash -l {0}
+        run: |
+          conda activate csv2xsd
+          python ./src/csv2xsd.py
+
+      - name: commit-artifacts
+        run: |
+          git add .
+          git diff-index --quiet HEAD || git commit -m "new .xsd files from CSV have been generated"
+          git push
