@@ -1,4 +1,4 @@
-@prefix datacite: <http://purl.org/datacite/v4.4/> .
+@prefix datacite: <http://purl.org/datacite/v4.5/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -18,706 +18,857 @@
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://purl.org/datacite/v4.4> a skos:ConceptScheme;
+<http://purl.org/datacite/v4.5> a skos:ConceptScheme;
   dct:contributor <https://orcid.org/0000-0002-9381-9693>;
-  dct:description "Controlled vocabulary of terms used in Datacite Schema 4.4"@en;
+  dct:description "Controlled vocabulary of terms used in Datacite Schema 4.5"@en;
   dct:rights <https://spdx.org/licenses/CC0-1.0>;
-  dct:title "Datacite Controlled Terms"@en;
+  dct:title "DataCite Controlled Terms"@en;
   pav:createdOn "2022-05-03T12:00+02:00"@en;
   pav:lastUpdatedOn "2022-05-03T12:00+02:00"@en;
-  pav:version "0.1.0"@en;
-  skos:hasTopConcept <http://purl.org/datacite/v4.4/>, datacite:ContributorType, datacite:Copyrighted,
-    datacite:DateType, datacite:DescriptionType, datacite:RelatedIdentifierType, datacite:RelationType,
-    datacite:ResourceCreatorType, datacite:ResourceTypeGeneral, datacite:TitleType .
+  pav:version "4.5.0"@en;
+  skos:hasTopConcept <http://purl.org/datacite/v4.5/>, datacite:contributorType, datacite:dateType,
+    datacite:descriptionType, datacite:funderIdentifierType, datacite:nameType, datacite:numberType,
+    datacite:relatedIdentifierType, datacite:relationType, datacite:resourceTypeGeneral,
+    datacite:titleType .
 
-datacite:ResourceTypeGeneral a skos:Concept;
-  skos:definition "This is a set of controlled terms from DataCite/DCMI for the category of resource being described."@en;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+datacite:resourceTypeGeneral a skos:Concept;
+  skos:definition "The general type of a resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:narrower datacite:Audiovisual, datacite:Book, datacite:BookChapter, datacite:Collection,
     datacite:ComputationalNotebook, datacite:ConferencePaper, datacite:ConferenceProceeding,
     datacite:DataPaper, datacite:Dataset, datacite:Dissertation, datacite:Event, datacite:Image,
-    datacite:InteractiveResource, datacite:Journal, datacite:JournalArticle, datacite:Model,
-    datacite:Other, datacite:OutputManagementPlan, datacite:PeerReview, datacite:PhysicalObject,
-    datacite:Preprint, datacite:Report, datacite:Service, datacite:Software, datacite:Sound,
-    datacite:Standard, datacite:Text, datacite:Workflow;
-  skos:prefLabel "Resource Type General"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+    datacite:Instrument, datacite:InteractiveResource, datacite:Journal, datacite:JournalArticle,
+    datacite:Model, datacite:Other, datacite:OutputManagementPlan, datacite:PeerReview,
+    datacite:PhysicalObject, datacite:Preprint, datacite:Report, datacite:Service, datacite:Software,
+    datacite:Sound, datacite:Standard, datacite:StudyRegistration, datacite:Text, datacite:Workflow;
+  skos:prefLabel "resourceTypeGeneral"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:Audiovisual a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:definition "FIXME"@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Audiovisual"@en .
 
 datacite:Book a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Book"@en .
 
 datacite:BookChapter a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "BookChapter"@en .
 
 datacite:Collection a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Collection"@en .
 
 datacite:ComputationalNotebook a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ComputationalNotebook"@en .
 
 datacite:ConferencePaper a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ConferencePaper"@en .
 
 datacite:ConferenceProceeding a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ConferenceProceeding"@en .
 
 datacite:DataPaper a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "DataPaper"@en .
 
 datacite:Dataset a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Dataset"@en .
 
 datacite:Dissertation a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Dissertation"@en .
 
 datacite:Event a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Event"@en .
 
 datacite:Image a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Image"@en .
 
+datacite:Instrument a skos:Concept;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Instrument"@en .
+
 datacite:InteractiveResource a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "InteractiveResource"@en .
 
 datacite:Journal a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Journal"@en .
 
 datacite:JournalArticle a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "JournalArticle"@en .
 
 datacite:Model a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Model"@en .
 
 datacite:OutputManagementPlan a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "OutputManagementPlan"@en .
 
 datacite:PeerReview a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "PeerReview"@en .
 
 datacite:PhysicalObject a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "PhysicalObject"@en .
 
 datacite:Preprint a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Preprint"@en .
 
 datacite:Report a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader "datecite:numberType"@en, datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Report"@en .
 
 datacite:Service a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Service"@en .
 
 datacite:Software a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Software"@en .
 
 datacite:Sound a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Sound"@en .
 
 datacite:Standard a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Standard"@en .
 
+datacite:StudyRegistration a skos:Concept;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "StudyRegistration"@en .
+
 datacite:Text a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Text"@en .
 
 datacite:Workflow a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Workflow"@en .
 
 datacite:Other a skos:Concept;
-  skos:broader datacite:ResourceTypeGeneral;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader "datecite:numberType"@en, datacite:resourceTypeGeneral;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Other"@en .
 
-datacite:RelatedIdentifierType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+datacite:relatedIdentifierType a skos:Concept;
+  skos:definition "The type of the RelatedIdentifier."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:narrower datacite:ARK, datacite:DOI, datacite:EAN13, datacite:EISSN, datacite:Handle,
     datacite:IGSN, datacite:ISBN, datacite:ISSN, datacite:ISTC, datacite:LISSN, datacite:PMID,
     datacite:PURL, datacite:UPC, datacite:URL, datacite:URN, datacite:arXiv, datacite:bibcode,
     datacite:w3id;
-  skos:prefLabel "Related Identifier Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+  skos:prefLabel "relatedIdentifierType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:ARK a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Archival Resource Key"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A URI designed to support long-term access to information objects. In general, ARK syntax is of the form (brackets, []. indicate optional elements: [http://NMA/]ark:/NAAN/Name [Qualifier]"@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ARK"@en .
 
 datacite:arXiv a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "arXiv identifier"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "arXiv.org is a repository of preprints of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "arXiv"@en .
 
 datacite:bibcode a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Astrophysics Data System bibliographic codes"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A standardized 19-character identifier according to the syntax yyyyjjjjjvvvvmppppa. See http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:bibcode/."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "bibcode"@en .
 
 datacite:DOI a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Digital Object Identifier"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A character string used to uniquely identify an object. A DOI name is divided into two parts, a prefix and a suffix, separated by a slash."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "DOI"@en .
 
 datacite:EAN13 a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "European Article Number (now renamed International Article Number"@en,
+    "but retaining the original acronym)"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "EAN13"@en .
 
 datacite:EISSN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system."@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "ISSN used to identify periodicals in electronic form (eISSN or e-ISSN)."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "EISSN"@en .
 
 datacite:Handle a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Handle"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "This refers specifically to an ID in the Handle system operated by the Corporation for National Research Initiatives (CNRI)."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Handle"@en .
 
 datacite:IGSN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "International Generic Sample Number"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A code that uniquely identifies samples from our natural environment and related features-of-interest."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IGSN"@en .
 
 datacite:ISBN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "International Standard Book Number"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique numeric book identifier. There are 2 formats: a 10-digit ISBN format and a 13-digit ISBN."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ISBN"@en .
 
 datacite:ISSN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "International Standard Serial Number"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique 8-digit number used to identify a print or electronic periodical publication."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ISSN"@en .
 
 datacite:ISTC a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "International Standard Text Code"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ISTC"@en .
 
 datacite:LISSN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Life Science Identifiers"@en, "Linking ISSN"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique identifier for data in the Life Science domain. Format: urn:lsid:authority:namespace:identifier:revision."@en,
+    "The linking ISSN or ISSN-L enables collocation or linking among different media versions of a continuing resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "LISSN"@en .
 
 datacite:PMID a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "PubMed identifier"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique number assigned to each PubMed record."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "PMID"@en .
 
 datacite:PURL a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Persistent Uniform Resource Locator"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "PURL"@en .
 
 datacite:UPC a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Universal Product Code"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A barcode symbology used for tracking trade items in stores. Its most common form, the UPC-A, consists of 12 numerical digits."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "UPC"@en .
 
 datacite:URL a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Uniform Resource Locator"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "Also known as web address, a URL is a specific character string that constitutes a reference to a resource. The syntax is: scheme://domain:port/path?query_string#fragment_id."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "URL"@en .
 
 datacite:URN a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Uniform Resource Name"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "A unique and persistent identifier of an electronic document. The syntax is: urn:<NID>:<NSS>. The leading urn: sequence is case-insensitive, <NID> is the namespace identifier, <NSS> is the namespace-specific string."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "URN"@en .
 
 datacite:w3id a skos:Concept;
-  skos:broader datacite:RelatedIdentifierType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:altLabel "Permanent identifier for Web applications"@en;
+  skos:broader datacite:relatedIdentifierType;
+  skos:definition "Mostly used to publish vocabularies and ontologies. The letters ‘w3’ stand for “World Wide Web”."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "w3id"@en .
 
-datacite:RelationType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Cites, datacite:Compiles, datacite:Continues, datacite:Describes,
-    datacite:Documents, datacite:HasMetadata, datacite:HasPart, datacite:HasVersion, datacite:IsCitedBy,
-    datacite:IsCompiledBy, datacite:IsContinuedBy, datacite:IsDerivedFrom, datacite:IsDescribedBy,
-    datacite:IsDocumentedBy, datacite:IsIdenticalTo, datacite:IsMetadataFor, datacite:IsNewVersionOf,
-    datacite:IsOriginalFormOf, datacite:IsPartOf, datacite:IsPreviousVersionOf, datacite:IsPublishedIn,
-    datacite:IsReferencedBy, datacite:IsRequiredBy, datacite:IsReviewedBy, datacite:IsSourceOf,
-    datacite:IsSupplementTo, datacite:IsSupplementedBy, datacite:IsVariantFormOf, datacite:IsVersionOf,
-    datacite:Obsoletes, datacite:References, datacite:Requires, datacite:Reviews;
-  skos:prefLabel "Relation Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+datacite:relationType a skos:Concept;
+  skos:definition "Description of the relationship of the resource being registered (A) and the related resource (B)."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:narrower datacite:Cites, datacite:Collects, datacite:Compiles, datacite:Continues,
+    datacite:Describes, datacite:Documents, datacite:HasMetadata, datacite:HasPart, datacite:HasVersion,
+    datacite:IsCitedBy, datacite:IsCollectedBy, datacite:IsCompiledBy, datacite:IsContinuedBy,
+    datacite:IsDerivedFrom, datacite:IsDescribedBy, datacite:IsDocumentedBy, datacite:IsIdenticalTo,
+    datacite:IsMetadataFor, datacite:IsNewVersionOf, datacite:IsOriginalFormOf, datacite:IsPartOf,
+    datacite:IsPreviousVersionOf, datacite:IsPublishedIn, datacite:IsReferencedBy, datacite:IsRequiredBy,
+    datacite:IsReviewedBy, datacite:IsSourceOf, datacite:IsSupplementTo, datacite:IsSupplementedBy,
+    datacite:IsVariantFormOf, datacite:IsVersionOf, datacite:Obsoletes, datacite:References,
+    datacite:Requires, datacite:Reviews;
+  skos:prefLabel "relationType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:IsCitedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsCitedBy"@en .
 
 datacite:Cites a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Cites"@en .
 
 datacite:IsSupplementTo a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsSupplementTo"@en .
 
 datacite:IsSupplementedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsSupplementedBy"@en .
 
 datacite:IsContinuedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsContinuedBy"@en .
 
 datacite:Continues a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Continues"@en .
 
 datacite:Describes a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Describes"@en .
 
 datacite:IsDescribedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsDescribedBy"@en .
 
 datacite:HasMetadata a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "HasMetadata"@en .
 
 datacite:IsMetadataFor a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsMetadataFor"@en .
 
 datacite:HasVersion a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "HasVersion"@en .
 
 datacite:IsVersionOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsVersionOf"@en .
 
 datacite:IsNewVersionOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsNewVersionOf"@en .
 
 datacite:IsPreviousVersionOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsPreviousVersion Of"@en .
 
 datacite:IsPartOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsPartOf"@en .
 
 datacite:HasPart a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "HasPart"@en .
 
 datacite:IsPublishedIn a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsPublishedIn"@en .
 
 datacite:IsReferencedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsReferencedBy"@en .
 
 datacite:References a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "References"@en .
 
 datacite:IsDocumentedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsDocumentedBy"@en .
 
 datacite:Documents a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Documents"@en .
 
 datacite:IsCompiledBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsCompiledBy"@en .
 
 datacite:Compiles a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Compiles"@en .
 
 datacite:IsVariantFormOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsVariantFormOf"@en .
 
 datacite:IsOriginalFormOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsOriginalFormOf"@en .
 
 datacite:IsIdenticalTo a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsIdenticalTo"@en .
 
 datacite:IsReviewedBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsReviewedBy"@en .
 
 datacite:Reviews a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Reviews"@en .
 
 datacite:IsDerivedFrom a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsDerivedFrom"@en .
 
 datacite:IsSourceOf a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsSourceOf"@en .
 
 datacite:IsRequiredBy a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "IsRequiredBy"@en .
 
 datacite:Requires a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Requires"@en .
 
 datacite:Obsoletes a skos:Concept;
-  skos:broader datacite:RelationType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Obsoletes"@en .
 
-datacite:DescriptionType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Abstract, datacite:Methods, datacite:SeriesInformation, datacite:TableOfContents,
-    datacite:TechnicalInfo;
-  skos:prefLabel "Description Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+datacite:IsCollectedBy a skos:Concept;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "IsCollectedBy"@en .
+
+datacite:Collects a skos:Concept;
+  skos:broader datacite:relationType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Collects"@en .
+
+datacite:descriptionType a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:narrower datacite:Abstract, datacite:Methods, datacite:OtherDescriptionType,
+    datacite:SeriesInformation, datacite:TableOfContents, datacite:TechnicalInfo;
+  skos:prefLabel "descriptionType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:Abstract a skos:Concept;
-  skos:broader datacite:DescriptionType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:descriptionType;
+  skos:definition "A brief description of the resource and the context in which the resource was created."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Abstract"@en .
 
 datacite:Methods a skos:Concept;
-  skos:broader datacite:DescriptionType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:descriptionType;
+  skos:definition "The methodology employed for the study or research."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Methods"@en .
 
 datacite:SeriesInformation a skos:Concept;
-  skos:broader datacite:DescriptionType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:descriptionType;
+  skos:definition "Information about a repeating series, such as volume, issue, number."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "SeriesInformation"@en .
 
 datacite:TableOfContents a skos:Concept;
-  skos:broader datacite:DescriptionType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:descriptionType;
+  skos:definition "A listing of the Table of Contents."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "TableOfContents"@en .
 
 datacite:TechnicalInfo a skos:Concept;
-  skos:broader datacite:DescriptionType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:descriptionType;
+  skos:definition "Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "TechnicalInfo"@en .
 
-datacite:DateType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Accepted, datacite:Available, datacite:Collected, datacite:Created,
-    datacite:Description, datacite:Issued, datacite:OtherDescriptionType, datacite:Submitted,
-    datacite:Updated, datacite:Valid, datacite:Withdrawn;
-  skos:prefLabel "Date Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+datacite:OtherDescriptionType a skos:Concept;
+  skos:broader datacite:descriptionType;
+  skos:definition "Other description information that does not fit into an existing category."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Other"@en .
+
+datacite:dateType a skos:Concept;
+  skos:definition "The type of date. Use RKMS‐ISO8601 standard for depicting date ranges.To indicate the end of an embargo period, use Available. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:narrower datacite:Accepted, datacite:Available, datacite:Collected, datacite:Copyrighted,
+    datacite:Created, datacite:Issued, datacite:OtherDateType, datacite:Submitted, datacite:Updated,
+    datacite:Valid, datacite:Withdrawn;
+  skos:prefLabel "dateType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:Accepted a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date that the publisher accepted the resource into their system."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Accepted"@en .
 
 datacite:Available a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date that the publisher accepted the resource into their system."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Available"@en .
 
 datacite:Copyrighted a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Copyrighted"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+  skos:broader datacite:dateType;
+  skos:definition "The specific, documented date at which the resource receives a copyrighted status, if applicable."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Copyrighted"@en .
 
 datacite:Collected a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date or date range in which the resource content was collected."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Collected"@en .
 
-datacite:Description a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Description"@en .
-
 datacite:Created a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Created"@en .
 
 datacite:Issued a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date that the resource is published or distributed, e.g., to a data centre."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Issued"@en .
 
+datacite:OtherDateType a skos:Concept;
+  skos:broader datacite:dateType;
+  skos:definition "Other date that does not fit into an existing category."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Other"@en .
+
 datacite:Submitted a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Submitted"@en .
 
 datacite:Updated a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date of the last update to the resource, when the resource is being added to. May be a range."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Updated"@en .
 
 datacite:Valid a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date or date range during which the dataset or resource is accurate."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Valid"@en .
 
 datacite:Withdrawn a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:dateType;
+  skos:definition "The date the resource is removed."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Withdrawn"@en .
 
-datacite:OtherDescriptionType a skos:Concept;
-  skos:broader datacite:DateType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Other"@en .
-
-datacite:ContributorType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+datacite:contributorType a skos:Concept;
+  skos:definition "The type of contributor of the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:narrower datacite:ContactPerson, datacite:DataCollector, datacite:DataCurator,
     datacite:DataManager, datacite:Distributor, datacite:Editor, datacite:HostingInstitution,
     datacite:OtherContributorType, datacite:Producer, datacite:ProjectLeader, datacite:ProjectManager,
     datacite:ProjectMember, datacite:RegistrationAgency, datacite:RegistrationAuthority,
     datacite:RelatedPerson, datacite:ResearchGroup, datacite:Researcher, datacite:RightsHolder,
     datacite:Sponsor, datacite:Supervisor, datacite:WorkPackageLeader;
-  skos:prefLabel "Contributor Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+  skos:prefLabel "contributorType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:ContactPerson a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ContactPerson"@en .
 
 datacite:DataCollector a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person/institution responsible for finding or gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI)."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "DataCollector"@en .
 
 datacite:DataCurator a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "DataCurator"@en .
 
 datacite:DataManager a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person (or organisation with a staff of data managers, such as a data centre) responsible for maintaining the finished resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "DataManager"@en .
 
 datacite:Distributor a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Distributor"@en .
 
 datacite:Editor a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "A person who oversees the details related to the publication format of the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Editor"@en .
 
 datacite:HostingInstitution a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "HostingInstitution"@en .
 
 datacite:Producer a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Typically, a person or organisation responsible for the artistry and form of a media product."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Producer"@en .
 
 datacite:ProjectLeader a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person officially designated as head of project team or sub- project team instrumental in the work necessary to development of the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ProjectLeader"@en .
 
 datacite:ProjectManager a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ProjectManager"@en .
 
 datacite:ProjectMember a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person on the membership list of a designated project/project team."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ProjectMember"@en .
 
 datacite:RegistrationAgency a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Institution/organisation officially appointed by a Registration Authority to handle specific tasks within a defined area of responsibility."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "RegistrationAgency"@en .
 
 datacite:RegistrationAuthority a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "A standards-setting body from which Registration Agencies obtain official recognition and guidance."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "RegistrationAuthority"@en .
 
 datacite:RelatedPerson a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "A person without a specifically defined role in the development of the resource, but who is someone the author wishes to recognize."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "RelatedPerson"@en .
 
 datacite:Researcher a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "A person involved in analysing data or the results of an experiment or formal study. May indicate an intern or assistant to one of the authors who helped with research but who was not so “key” as to be listed as an author."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Researcher"@en .
 
 datacite:ResearchGroup a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Typically refers to a group of individuals with a lab, department, or division that has a specifically defined focus of activity."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "ResearchGroup"@en .
 
 datacite:RightsHolder a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person or institution owning or managing property rights, including intellectual property rights over the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "RightsHolder"@en .
 
 datacite:Sponsor a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Sponsor"@en .
 
 datacite:Supervisor a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Supervisor"@en .
 
 datacite:WorkPackageLeader a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "A Work Package is a recognized data product, not all of which is included in publication. The package, instead, may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring the comprehensive contents, versioning, and availability of the Work Package during the development of the resource."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "WorkPackageLeader"@en .
 
 datacite:OtherContributorType a skos:Concept;
-  skos:broader datacite:ContributorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:contributorType;
+  skos:definition "Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution is not adequately described by any of the other values for contributorType."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Other"@en .
 
-datacite:ResourceCreatorType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:narrower datacite:Organization, datacite:Person;
-  skos:prefLabel "Resource Creator Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+datacite:nameType a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:narrower datacite:Organizational, datacite:Personal;
+  skos:prefLabel "nameType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
-datacite:Person a skos:Concept;
-  skos:broader datacite:ResourceCreatorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Person"@en .
+datacite:Personal a skos:Concept;
+  skos:broader datacite:nameType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Personal"@en .
 
-datacite:Organization a skos:Concept;
-  skos:broader datacite:ResourceCreatorType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:prefLabel "Organization"@en .
+datacite:Organizational a skos:Concept;
+  skos:broader datacite:nameType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Organizational"@en .
 
-datacite:TitleType a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+datacite:titleType a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:narrower datacite:AlternativeTitle, datacite:OtherTitle, datacite:Subtitle, datacite:TranslatedTitle;
-  skos:prefLabel "Title Type"@en;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+  skos:prefLabel "titleType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
 datacite:AlternativeTitle a skos:Concept;
-  skos:broader datacite:TitleType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:titleType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "AlternativeTitle"@en .
 
 datacite:Subtitle a skos:Concept;
-  skos:broader datacite:TitleType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:titleType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Subtitle"@en .
 
 datacite:TranslatedTitle a skos:Concept;
-  skos:broader datacite:TitleType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:titleType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "TranslatedTitle"@en .
 
 datacite:OtherTitle a skos:Concept;
-  skos:broader datacite:TitleType;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
+  skos:broader datacite:titleType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Other"@en .
 
-<http://purl.org/datacite/v4.4/> a skos:Concept;
-  skos:inScheme <http://purl.org/datacite/v4.4>;
-  skos:topConceptOf <http://purl.org/datacite/v4.4> .
+datacite:numberType a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "numberType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
+
+datacite:Article a skos:Concept;
+  skos:broader "datecite:numberType"@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Article"@en .
+
+datacite:Chapter a skos:Concept;
+  skos:broader "datecite:numberType"@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Chapter"@en .
+
+datacite:funderIdentifierType a skos:Concept;
+  skos:definition "The type of the funderIdentifier."@en;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:narrower datacite:CrossrefFunderID, datacite:GRID, datacite:ISNI, datacite:OtherFunderIdentifierType,
+    datacite:ROR;
+  skos:prefLabel "funderIdentifierType"@en;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
+
+datacite:ISNI a skos:Concept;
+  skos:broader datacite:funderIdentifierType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "ISNI"@en .
+
+datacite:GRID a skos:Concept;
+  skos:broader datacite:funderIdentifierType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "GRID"@en .
+
+datacite:ROR a skos:Concept;
+  skos:broader datacite:funderIdentifierType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "ROR"@en .
+
+datacite:CrossrefFunderID a skos:Concept;
+  skos:broader datacite:funderIdentifierType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Crossref Funder ID"@en .
+
+datacite:OtherFunderIdentifierType a skos:Concept;
+  skos:broader datacite:funderIdentifierType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Other"@en .
+
+<http://purl.org/datacite/v4.5/> a skos:Concept;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:topConceptOf <http://purl.org/datacite/v4.5> .
