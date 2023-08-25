@@ -1,169 +1,169 @@
-ConceptScheme URI,http://purl.org/datacite/v4.5,Main GUPRI (i.e. PID) under which all terms are defined. Preference is to use PURLs or W3IDs as they provide permanent resolvable identifiers.,-,-,-,-,-,-,-,-
-"Prefixes for controlled vocabularies, schema and ontologies"
-PREFIX,datacite,http://purl.org/datacite/v4.5/,Prefix for our controlled vocabulary since it is rather tedious to write long URLs all the time
-PREFIX,skos,http://www.w3.org/2004/02/skos/core#,Prefix for SKOS Ontology. This ontology is which our base for defining terms.
-PREFIX,pav,http://purl.org/pav/ ,"Prefix for Provenance, Authoring and Versioning Ontology which properties such as version and createdOn we will use to describe our controlled vocabulary"
-PREFIX,dct,http://purl.org/dc/terms/ ,"Prefix for Dublin Core (Terms) Ontology which properties such as title, description, rights, source, etc. we will use to describe our controlled vocabulary as well to define its terms"
-Metadata about vocabulary
-
-dct:title,DataCite Controlled Terms,Title of the vocabulary
-dct:description,Controlled vocabulary of terms used in Datacite Schema 4.5,Description of the controlled vocabulary
-dct:contributor,https://orcid.org/0000-0002-9381-9693,"An ORCID ID of the vocabulary creator, repeat this row as needed."
-dct:rights,https://spdx.org/licenses/CC0-1.0,License under which the vocabulary is provided
-pav:version,4.5.0,Vocabulary version
-pav:createdOn,2022-05-03T12:00+02:00,Date when vocabulary was initially created
-pav:lastUpdatedOn,2022-05-03T12:00+02:00,Date of the last vocabulary update
-Definition of terms
-
-Identifier,skos:prefLabel@en,skos:definition@en,"skos:altLabel(separator="","")","dct:source(separator="","")","skos:broader(separator="","")","skos:exactMatch(separator="","")","skos:closeMatch(separator="","")",skos:editorialNote@en,"dct:creator(separator="","")","dct:contributor(separator="","")"
-datacite:resourceTypeGeneral,resourceTypeGeneral,The general type of a resource.
-datacite:Audiovisual,Audiovisual,FIXME,,,datacite:resourceTypeGeneral
-datacite:Book,Book,,,,datacite:resourceTypeGeneral
-datacite:BookChapter,BookChapter,,,,datacite:resourceTypeGeneral
-datacite:Collection,Collection,,,,datacite:resourceTypeGeneral
-datacite:ComputationalNotebook,ComputationalNotebook,,,,datacite:resourceTypeGeneral
-datacite:ConferencePaper,ConferencePaper,,,,datacite:resourceTypeGeneral
-datacite:ConferenceProceeding,ConferenceProceeding,,,,datacite:resourceTypeGeneral
-datacite:DataPaper,DataPaper,,,,datacite:resourceTypeGeneral
-datacite:Dataset,Dataset,,,,datacite:resourceTypeGeneral
-datacite:Dissertation,Dissertation,,,,datacite:resourceTypeGeneral
-datacite:Event,Event,,,,datacite:resourceTypeGeneral
-datacite:Image,Image,,,,datacite:resourceTypeGeneral
-datacite:Instrument,Instrument,,,,datacite:resourceTypeGeneral
-datacite:InteractiveResource,InteractiveResource,,,,datacite:resourceTypeGeneral
-datacite:Journal,Journal,,,,datacite:resourceTypeGeneral
-datacite:JournalArticle,JournalArticle,,,,datacite:resourceTypeGeneral
-datacite:Model,Model,,,,datacite:resourceTypeGeneral
-datacite:OutputManagementPlan,OutputManagementPlan,,,,datacite:resourceTypeGeneral
-datacite:PeerReview,PeerReview,,,,datacite:resourceTypeGeneral
-datacite:PhysicalObject,PhysicalObject,,,,datacite:resourceTypeGeneral
-datacite:Preprint,Preprint,,,,datacite:resourceTypeGeneral
-datacite:Report,Report,,,,datacite:resourceTypeGeneral
-datacite:Service,Service,,,,datacite:resourceTypeGeneral
-datacite:Software,Software,,,,datacite:resourceTypeGeneral
-datacite:Sound,Sound,,,,datacite:resourceTypeGeneral
-datacite:Standard,Standard,,,,datacite:resourceTypeGeneral
-datacite:StudyRegistration,StudyRegistration,,,,datacite:resourceTypeGeneral
-datacite:Text,Text,,,,datacite:resourceTypeGeneral
-datacite:Workflow,Workflow,,,,datacite:resourceTypeGeneral
-datacite:Other,Other,,,,datacite:resourceTypeGeneral
-datacite:relatedIdentifierType,relatedIdentifierType,The type of the RelatedIdentifier.
-datacite:ARK,ARK,"A URI designed to support long-term access to information objects. In general, ARK syntax is of the form (brackets, []. indicate optional elements: [http://NMA/]ark:/NAAN/Name [Qualifier]",Archival Resource Key,,datacite:relatedIdentifierType
-datacite:arXiv,arXiv,"arXiv.org is a repository of preprints of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance.",arXiv identifier,,datacite:relatedIdentifierType
-datacite:bibcode,bibcode,A standardized 19-character identifier according to the syntax yyyyjjjjjvvvvmppppa. See http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:bibcode/.,Astrophysics Data System bibliographic codes,,datacite:relatedIdentifierType
-datacite:DOI,DOI,"A character string used to uniquely identify an object. A DOI name is divided into two parts, a prefix and a suffix, separated by a slash.",Digital Object Identifier,,datacite:relatedIdentifierType
-datacite:EAN13,EAN13,A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system.,"European Article Number (now renamed International Article Number, but retaining the original acronym)",,datacite:relatedIdentifierType
-datacite:EISSN,EISSN,ISSN used to identify periodicals in electronic form (eISSN or e-ISSN).,A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system.,,datacite:relatedIdentifierType
-datacite:Handle,Handle,This refers specifically to an ID in the Handle system operated by the Corporation for National Research Initiatives (CNRI).,Handle,,datacite:relatedIdentifierType
-datacite:IGSN,IGSN,A code that uniquely identifies samples from our natural environment and related features-of-interest.,International Generic Sample Number,,datacite:relatedIdentifierType
-datacite:ISBN,ISBN,A unique numeric book identifier. There are 2 formats: a 10-digit ISBN format and a 13-digit ISBN.,International Standard Book Number,,datacite:relatedIdentifierType
-datacite:ISSN,ISSN,A unique 8-digit number used to identify a print or electronic periodical publication.,International Standard Serial Number,,datacite:relatedIdentifierType
-datacite:ISTC,ISTC,A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters.,International Standard Text Code,,datacite:relatedIdentifierType
-datacite:LISSN,LISSN,The linking ISSN or ISSN-L enables collocation or linking among different media versions of a continuing resource.,Linking ISSN,,datacite:relatedIdentifierType
-datacite:LISSN,LISSN,A unique identifier for data in the Life Science domain. Format: urn:lsid:authority:namespace:identifier:revision.,Life Science Identifiers,,datacite:relatedIdentifierType
-datacite:PMID,PMID,A unique number assigned to each PubMed record.,PubMed identifier,,datacite:relatedIdentifierType
-datacite:PURL,PURL,"A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name.",Persistent Uniform Resource Locator,,datacite:relatedIdentifierType
-datacite:UPC,UPC,"A barcode symbology used for tracking trade items in stores. Its most common form, the UPC-A, consists of 12 numerical digits.",Universal Product Code,,datacite:relatedIdentifierType
-datacite:URL,URL,"Also known as web address, a URL is a specific character string that constitutes a reference to a resource. The syntax is: scheme://domain:port/path?query_string#fragment_id.",Uniform Resource Locator,,datacite:relatedIdentifierType
-datacite:URN,URN,"A unique and persistent identifier of an electronic document. The syntax is: urn:<NID>:<NSS>. The leading urn: sequence is case-insensitive, <NID> is the namespace identifier, <NSS> is the namespace-specific string.",Uniform Resource Name,,datacite:relatedIdentifierType
-datacite:w3id,w3id,Mostly used to publish vocabularies and ontologies. The letters ‘w3’ stand for “World Wide Web”.,Permanent identifier for Web applications,,datacite:relatedIdentifierType
-datacite:relationType,relationType,Description of the relationship of the resource being registered (A) and the related resource (B).
-datacite:IsCitedBy,IsCitedBy,,,,datacite:relationType
-datacite:Cites,Cites,,,,datacite:relationType
-datacite:IsSupplementTo,IsSupplementTo,,,,datacite:relationType
-datacite:IsSupplementedBy,IsSupplementedBy,,,,datacite:relationType
-datacite:IsContinuedBy,IsContinuedBy,,,,datacite:relationType
-datacite:Continues,Continues,,,,datacite:relationType
-datacite:Describes,Describes,,,,datacite:relationType
-datacite:IsDescribedBy,IsDescribedBy,,,,datacite:relationType
-datacite:HasMetadata,HasMetadata,,,,datacite:relationType
-datacite:IsMetadataFor,IsMetadataFor,,,,datacite:relationType
-datacite:HasVersion,HasVersion,,,,datacite:relationType
-datacite:IsVersionOf,IsVersionOf,,,,datacite:relationType
-datacite:IsNewVersionOf,IsNewVersionOf,,,,datacite:relationType
-datacite:IsPreviousVersionOf,IsPreviousVersion Of,,,,datacite:relationType
-datacite:IsPartOf,IsPartOf,,,,datacite:relationType
-datacite:HasPart,HasPart,,,,datacite:relationType
-datacite:IsPublishedIn,IsPublishedIn,,,,datacite:relationType
-datacite:IsReferencedBy,IsReferencedBy,,,,datacite:relationType
-datacite:References,References,,,,datacite:relationType
-datacite:IsDocumentedBy,IsDocumentedBy,,,,datacite:relationType
-datacite:Documents,Documents,,,,datacite:relationType
-datacite:IsCompiledBy,IsCompiledBy,,,,datacite:relationType
-datacite:Compiles,Compiles,,,,datacite:relationType
-datacite:IsVariantFormOf,IsVariantFormOf,,,,datacite:relationType
-datacite:IsOriginalFormOf,IsOriginalFormOf,,,,datacite:relationType
-datacite:IsIdenticalTo,IsIdenticalTo,,,,datacite:relationType
-datacite:IsReviewedBy,IsReviewedBy,,,,datacite:relationType
-datacite:Reviews,Reviews,,,,datacite:relationType
-datacite:IsDerivedFrom,IsDerivedFrom,,,,datacite:relationType
-datacite:IsSourceOf,IsSourceOf,,,,datacite:relationType
-datacite:IsRequiredBy,IsRequiredBy,,,,datacite:relationType
-datacite:Requires,Requires,,,,datacite:relationType
-datacite:Obsoletes,Obsoletes,,,,datacite:relationType
-datacite:IsRequiredBy,IsRequiredBy,,,,datacite:relationType
-datacite:IsCollectedBy,IsCollectedBy,,,,datacite:relationType
-datacite:Collects,Collects,,,,datacite:relationType
-datacite:descriptionType,descriptionType
-datacite:Abstract,Abstract,A brief description of the resource and the context in which the resource was created.,,,datacite:descriptionType
-datacite:Methods,Methods,The methodology employed for the study or research.,,,datacite:descriptionType
-datacite:SeriesInformation,SeriesInformation,"Information about a repeating series, such as volume, issue, number.",,,datacite:descriptionType
-datacite:TableOfContents,TableOfContents,A listing of the Table of Contents.,,,datacite:descriptionType
-datacite:TechnicalInfo,TechnicalInfo,"Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument.",,,datacite:descriptionType
-datacite:OtherDescriptionType,Other,Other description information that does not fit into an existing category.,,,datacite:descriptionType
-datacite:dateType,dateType,"The type of date. Use RKMS‐ISO8601 standard for depicting date ranges.To indicate the end of an embargo period, use Available. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate."
-datacite:Accepted,Accepted,The date that the publisher accepted the resource into their system.,,,datacite:dateType
-datacite:Available,Available,The date that the publisher accepted the resource into their system.,,,datacite:dateType
-datacite:Copyrighted,Copyrighted,"The specific, documented date at which the resource receives a copyrighted status, if applicable.",,,datacite:dateType
-datacite:Collected,Collected,The date or date range in which the resource content was collected.,,,datacite:dateType
-datacite:Created,Created,"The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.",,,datacite:dateType
-datacite:Issued,Issued,"The date that the resource is published or distributed, e.g., to a data centre.",,,datacite:dateType
-datacite:OtherDateType,Other,Other date that does not fit into an existing category.,,,datacite:dateType
-datacite:Submitted,Submitted,The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.,,,datacite:dateType
-datacite:Updated,Updated,"The date of the last update to the resource, when the resource is being added to. May be a range.",,,datacite:dateType
-datacite:Valid,Valid,The date or date range during which the dataset or resource is accurate.,,,datacite:dateType
-datacite:Withdrawn,Withdrawn,The date the resource is removed.,,,datacite:dateType
-datacite:contributorType,contributorType,The type of contributor of the resource.
-datacite:ContactPerson,ContactPerson,"Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource.",,,datacite:contributorType
-datacite:DataCollector,DataCollector,Person/institution responsible for finding or gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).,,,datacite:contributorType
-datacite:DataCurator,DataCurator,"Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository.",,,datacite:contributorType
-datacite:DataManager,DataManager,"Person (or organisation with a staff of data managers, such as a data centre) responsible for maintaining the finished resource.",,,datacite:contributorType
-datacite:Distributor,Distributor,Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form.,,,datacite:contributorType
-datacite:Editor,Editor,A person who oversees the details related to the publication format of the resource.,,,datacite:contributorType
-datacite:HostingInstitution,HostingInstitution,"Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.",,,datacite:contributorType
-datacite:Producer,Producer,"Typically, a person or organisation responsible for the artistry and form of a media product.",,,datacite:contributorType
-datacite:ProjectLeader,ProjectLeader,Person officially designated as head of project team or sub- project team instrumental in the work necessary to development of the resource.,,,datacite:contributorType
-datacite:ProjectManager,ProjectManager,Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams.,,,datacite:contributorType
-datacite:ProjectMember,ProjectMember,Person on the membership list of a designated project/project team.,,,datacite:contributorType
-datacite:RegistrationAgency,RegistrationAgency,Institution/organisation officially appointed by a Registration Authority to handle specific tasks within a defined area of responsibility.,,,datacite:contributorType
-datacite:RegistrationAuthority,RegistrationAuthority,A standards-setting body from which Registration Agencies obtain official recognition and guidance.,,,datacite:contributorType
-datacite:RelatedPerson,RelatedPerson,"A person without a specifically defined role in the development of the resource, but who is someone the author wishes to recognize.",,,datacite:contributorType
-datacite:Researcher,Researcher,A person involved in analysing data or the results of an experiment or formal study. May indicate an intern or assistant to one of the authors who helped with research but who was not so “key” as to be listed as an author.,,,datacite:contributorType
-datacite:ResearchGroup,ResearchGroup,"Typically refers to a group of individuals with a lab, department, or division that has a specifically defined focus of activity.",,,datacite:contributorType
-datacite:RightsHolder,RightsHolder,"Person or institution owning or managing property rights, including intellectual property rights over the resource.",,,datacite:contributorType
-datacite:Sponsor,Sponsor,"Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc.",,,datacite:contributorType
-datacite:Supervisor,Supervisor,"Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process.",,,datacite:contributorType
-datacite:WorkPackageLeader,WorkPackageLeader,"A Work Package is a recognized data product, not all of which is included in publication. The package, instead, may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring the comprehensive contents, versioning, and availability of the Work Package during the development of the resource.",,,datacite:contributorType
-datacite:OtherContributorType,Other,"Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution is not adequately described by any of the other values for contributorType.",,,datacite:contributorType
-datacite:nameType,nameType
-datacite:Personal,Personal,,,,datacite:nameType
-datacite:Organizational,Organizational,,,,datacite:nameType
-datacite:titleType,titleType
-datacite:AlternativeTitle,AlternativeTitle,,,,datacite:titleType
-datacite:Subtitle,Subtitle,,,,datacite:titleType
-datacite:TranslatedTitle,TranslatedTitle,,,,datacite:titleType
-datacite:OtherTitle,Other,,,,datacite:titleType
-datacite:numberType,numberType
-datacite:Article,Article,,,,datecite:numberType
-datacite:Chapter,Chapter,,,,datecite:numberType
-datacite:Report,Report,,,,datecite:numberType
-datacite:Other,Other,,,,datecite:numberType
-datacite:funderIdentifierType,funderIdentifierType,The type of the funderIdentifier.
-datacite:ISNI,ISNI,,,,datacite:funderIdentifierType
-datacite:GRID,GRID,,,,datacite:funderIdentifierType
-datacite:ROR,ROR,,,,datacite:funderIdentifierType
-datacite:CrossrefFunderID,Crossref Funder ID,,,,datacite:funderIdentifierType
-datacite:OtherFunderIdentifierType,Other,,,,datacite:funderIdentifierType
-datacite:
-datacite:
-datacite:
+ConceptScheme URI,http://purl.org/datacite/v4.5,Main GUPRI (i.e. PID) under which all terms are defined. Preference is to use PURLs or W3IDs as they provide permanent resolvable identifiers.,,,,,,,,,
+"Prefixes for controlled vocabularies, schema and ontologies",,,,,,,,,,,
+PREFIX,datacite,http://purl.org/datacite/v4.5/,Prefix for our controlled vocabulary since it is rather tedious to write long URLs all the time,,,,,,,,
+PREFIX,skos,http://www.w3.org/2004/02/skos/core#,Prefix for SKOS Ontology. This ontology is which our base for defining terms.,,,,,,,,
+PREFIX,pav,http://purl.org/pav/ ,"Prefix for Provenance, Authoring and Versioning Ontology which properties such as version and createdOn we will use to describe our controlled vocabulary",,,,,,,,
+PREFIX,dct,http://purl.org/dc/terms/ ,"Prefix for Dublin Core (Terms) Ontology which properties such as title, description, rights, source, etc. we will use to describe our controlled vocabulary as well to define its terms",,,,,,,,
+Metadata about vocabulary,,,,,,,,,,,
+,,,,,,,,,,,
+dct:title,DataCite Controlled Terms,Title of the vocabulary,,,,,,,,,
+dct:description,Controlled vocabulary of terms used in Datacite Schema 4.5,Description of the controlled vocabulary,,,,,,,,,
+dct:contributor,https://orcid.org/0000-0002-9381-9693,"An ORCID ID of the vocabulary creator, repeat this row as needed.",,,,,,,,,
+dct:rights,https://spdx.org/licenses/CC0-1.0,License under which the vocabulary is provided,,,,,,,,,
+pav:version,4.5.0,Vocabulary version,,,,,,,,,
+pav:createdOn,2022-05-03T12:00+02:00,Date when vocabulary was initially created,,,,,,,,,
+pav:lastUpdatedOn,2022-05-03T12:00+02:00,Date of the last vocabulary update,,,,,,,,,
+Definition of terms,,,,,,,,,,,
+,,,,,,,,,,,
+Identifier,skos:prefLabel@en,skos:definition@en,"skos:altLabel(separator="","")","dct:source(separator="","")","skos:broader(separator="","")","skos:exactMatch(separator="","")","skos:closeMatch(separator="","")",skos:editorialNote@en,"dct:creator(separator="","")","dct:contributor(separator="","")",
+datacite:resourceTypeGeneral,resourceTypeGeneral,The general type of a resource.,,,,,,,,,
+datacite:Audiovisual,Audiovisual,FIXME,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Book,Book,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:BookChapter,BookChapter,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Collection,Collection,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:ComputationalNotebook,ComputationalNotebook,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:ConferencePaper,ConferencePaper,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:ConferenceProceeding,ConferenceProceeding,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:DataPaper,DataPaper,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Dataset,Dataset,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Dissertation,Dissertation,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Event,Event,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Image,Image,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Instrument,Instrument,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:InteractiveResource,InteractiveResource,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Journal,Journal,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:JournalArticle,JournalArticle,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Model,Model,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:OutputManagementPlan,OutputManagementPlan,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:PeerReview,PeerReview,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:PhysicalObject,PhysicalObject,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Preprint,Preprint,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Report,Report,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Service,Service,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Software,Software,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Sound,Sound,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Standard,Standard,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:StudyRegistration,StudyRegistration,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Text,Text,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Workflow,Workflow,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:Other,Other,,,,datacite:resourceTypeGeneral,,,,,,
+datacite:relatedIdentifierType,relatedIdentifierType,The type of the RelatedIdentifier.,,,,,,,,,
+datacite:ARK,ARK,"A URI designed to support long-term access to information objects. In general, ARK syntax is of the form (brackets, []. indicate optional elements: [http://NMA/]ark:/NAAN/Name [Qualifier]",Archival Resource Key,,datacite:relatedIdentifierType,,,,,,
+datacite:arXiv,arXiv,"arXiv.org is a repository of preprints of scientific papers in the fields of mathematics, physics, astronomy, computer science, quantitative biology, statistics, and quantitative finance.",arXiv identifier,,datacite:relatedIdentifierType,,,,,,
+datacite:bibcode,bibcode,A standardized 19-character identifier according to the syntax yyyyjjjjjvvvvmppppa. See http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:bibcode/.,Astrophysics Data System bibliographic codes,,datacite:relatedIdentifierType,,,,,,
+datacite:DOI,DOI,"A character string used to uniquely identify an object. A DOI name is divided into two parts, a prefix and a suffix, separated by a slash.",Digital Object Identifier,,datacite:relatedIdentifierType,,,,,,
+datacite:EAN13,EAN13,A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system.,"European Article Number (now renamed International Article Number, but retaining the original acronym)",,datacite:relatedIdentifierType,,,,,,
+datacite:EISSN,EISSN,ISSN used to identify periodicals in electronic form (eISSN or e-ISSN).,A 13-digit barcoding standard that is a superset of the original 12-digit Universal Product Code (UPC) system.,,datacite:relatedIdentifierType,,,,,,
+datacite:Handle,Handle,This refers specifically to an ID in the Handle system operated by the Corporation for National Research Initiatives (CNRI).,Handle,,datacite:relatedIdentifierType,,,,,,
+datacite:IGSN,IGSN,A code that uniquely identifies samples from our natural environment and related features-of-interest.,International Generic Sample Number,,datacite:relatedIdentifierType,,,,,,
+datacite:ISBN,ISBN,A unique numeric book identifier. There are 2 formats: a 10-digit ISBN format and a 13-digit ISBN.,International Standard Book Number,,datacite:relatedIdentifierType,,,,,,
+datacite:ISSN,ISSN,A unique 8-digit number used to identify a print or electronic periodical publication.,International Standard Serial Number,,datacite:relatedIdentifierType,,,,,,
+datacite:ISTC,ISTC,A unique “number” assigned to a textual work. An ISTC consists of 16 numbers and/or letters.,International Standard Text Code,,datacite:relatedIdentifierType,,,,,,
+datacite:LISSN,LISSN,The linking ISSN or ISSN-L enables collocation or linking among different media versions of a continuing resource.,Linking ISSN,,datacite:relatedIdentifierType,,,,,,
+datacite:LISSN,LISSN,A unique identifier for data in the Life Science domain. Format: urn:lsid:authority:namespace:identifier:revision.,Life Science Identifiers,,datacite:relatedIdentifierType,,,,,,
+datacite:PMID,PMID,A unique number assigned to each PubMed record.,PubMed identifier,,datacite:relatedIdentifierType,,,,,,
+datacite:PURL,PURL,"A PURL has three parts: (1) a protocol, (2) a resolver address, and (3) a name.",Persistent Uniform Resource Locator,,datacite:relatedIdentifierType,,,,,,
+datacite:UPC,UPC,"A barcode symbology used for tracking trade items in stores. Its most common form, the UPC-A, consists of 12 numerical digits.",Universal Product Code,,datacite:relatedIdentifierType,,,,,,
+datacite:URL,URL,"Also known as web address, a URL is a specific character string that constitutes a reference to a resource. The syntax is: scheme://domain:port/path?query_string#fragment_id.",Uniform Resource Locator,,datacite:relatedIdentifierType,,,,,,
+datacite:URN,URN,"A unique and persistent identifier of an electronic document. The syntax is: urn:<NID>:<NSS>. The leading urn: sequence is case-insensitive, <NID> is the namespace identifier, <NSS> is the namespace-specific string.",Uniform Resource Name,,datacite:relatedIdentifierType,,,,,,
+datacite:w3id,w3id,Mostly used to publish vocabularies and ontologies. The letters ‘w3’ stand for “World Wide Web”.,Permanent identifier for Web applications,,datacite:relatedIdentifierType,,,,,,
+datacite:relationType,relationType,Description of the relationship of the resource being registered (A) and the related resource (B).,,,,,,,,,
+datacite:IsCitedBy,IsCitedBy,,,,datacite:relationType,,,,,,
+datacite:Cites,Cites,,,,datacite:relationType,,,,,,
+datacite:IsSupplementTo,IsSupplementTo,,,,datacite:relationType,,,,,,
+datacite:IsSupplementedBy,IsSupplementedBy,,,,datacite:relationType,,,,,,
+datacite:IsContinuedBy,IsContinuedBy,,,,datacite:relationType,,,,,,
+datacite:Continues,Continues,,,,datacite:relationType,,,,,,
+datacite:Describes,Describes,,,,datacite:relationType,,,,,,
+datacite:IsDescribedBy,IsDescribedBy,,,,datacite:relationType,,,,,,
+datacite:HasMetadata,HasMetadata,,,,datacite:relationType,,,,,,
+datacite:IsMetadataFor,IsMetadataFor,,,,datacite:relationType,,,,,,
+datacite:HasVersion,HasVersion,,,,datacite:relationType,,,,,,
+datacite:IsVersionOf,IsVersionOf,,,,datacite:relationType,,,,,,
+datacite:IsNewVersionOf,IsNewVersionOf,,,,datacite:relationType,,,,,,
+datacite:IsPreviousVersionOf,IsPreviousVersion Of,,,,datacite:relationType,,,,,,
+datacite:IsPartOf,IsPartOf,,,,datacite:relationType,,,,,,
+datacite:HasPart,HasPart,,,,datacite:relationType,,,,,,
+datacite:IsPublishedIn,IsPublishedIn,,,,datacite:relationType,,,,,,
+datacite:IsReferencedBy,IsReferencedBy,,,,datacite:relationType,,,,,,
+datacite:References,References,,,,datacite:relationType,,,,,,
+datacite:IsDocumentedBy,IsDocumentedBy,,,,datacite:relationType,,,,,,
+datacite:Documents,Documents,,,,datacite:relationType,,,,,,
+datacite:IsCompiledBy,IsCompiledBy,,,,datacite:relationType,,,,,,
+datacite:Compiles,Compiles,,,,datacite:relationType,,,,,,
+datacite:IsVariantFormOf,IsVariantFormOf,,,,datacite:relationType,,,,,,
+datacite:IsOriginalFormOf,IsOriginalFormOf,,,,datacite:relationType,,,,,,
+datacite:IsIdenticalTo,IsIdenticalTo,,,,datacite:relationType,,,,,,
+datacite:IsReviewedBy,IsReviewedBy,,,,datacite:relationType,,,,,,
+datacite:Reviews,Reviews,,,,datacite:relationType,,,,,,
+datacite:IsDerivedFrom,IsDerivedFrom,,,,datacite:relationType,,,,,,
+datacite:IsSourceOf,IsSourceOf,,,,datacite:relationType,,,,,,
+datacite:IsRequiredBy,IsRequiredBy,,,,datacite:relationType,,,,,,
+datacite:Requires,Requires,,,,datacite:relationType,,,,,,
+datacite:Obsoletes,Obsoletes,,,,datacite:relationType,,,,,,
+datacite:IsRequiredBy,IsRequiredBy,,,,datacite:relationType,,,,,,
+datacite:IsCollectedBy,IsCollectedBy,,,,datacite:relationType,,,,,,
+datacite:Collects,Collects,,,,datacite:relationType,,,,,,
+datacite:descriptionType,descriptionType,,,,,,,,,,
+datacite:Abstract,Abstract,A brief description of the resource and the context in which the resource was created.,,,datacite:descriptionType,,,,,,
+datacite:Methods,Methods,The methodology employed for the study or research.,,,datacite:descriptionType,,,,,,
+datacite:SeriesInformation,SeriesInformation,"Information about a repeating series, such as volume, issue, number.",,,datacite:descriptionType,,,,,,
+datacite:TableOfContents,TableOfContents,A listing of the Table of Contents.,,,datacite:descriptionType,,,,,,
+datacite:TechnicalInfo,TechnicalInfo,"Detailed information that may be associated with design, implementation, operation, use, and/or maintenance of a process, system, or instrument.",,,datacite:descriptionType,,,,,,
+datacite:OtherDescriptionType,Other,Other description information that does not fit into an existing category.,,,datacite:descriptionType,,,,,,
+datacite:dateType,dateType,"The type of date. Use RKMS‐ISO8601 standard for depicting date ranges.To indicate the end of an embargo period, use Available. To indicate the start of an embargo period, use Submitted or Accepted, as appropriate.",,,,,,,,,
+datacite:Accepted,Accepted,The date that the publisher accepted the resource into their system.,,,datacite:dateType,,,,,,
+datacite:Available,Available,The date that the publisher accepted the resource into their system.,,,datacite:dateType,,,,,,
+datacite:Copyrighted,Copyrighted,"The specific, documented date at which the resource receives a copyrighted status, if applicable.",,,datacite:dateType,,,,,,
+datacite:Collected,Collected,The date or date range in which the resource content was collected.,,,datacite:dateType,,,,,,
+datacite:Created,Created,"The date the resource itself was put together; this could refer to a timeframe in ancient history, a date range, or a single date for a final component, e.g., the finalised file with all the data.",,,datacite:dateType,,,,,,
+datacite:Issued,Issued,"The date that the resource is published or distributed, e.g., to a data centre.",,,datacite:dateType,,,,,,
+datacite:OtherDateType,Other,Other date that does not fit into an existing category.,,,datacite:dateType,,,,,,
+datacite:Submitted,Submitted,The date the creator submits the resource to the publisher. This could be different from Accepted if the publisher then applies a selection process.,,,datacite:dateType,,,,,,
+datacite:Updated,Updated,"The date of the last update to the resource, when the resource is being added to. May be a range.",,,datacite:dateType,,,,,,
+datacite:Valid,Valid,The date or date range during which the dataset or resource is accurate.,,,datacite:dateType,,,,,,
+datacite:Withdrawn,Withdrawn,The date the resource is removed.,,,datacite:dateType,,,,,,
+datacite:contributorType,contributorType,The type of contributor of the resource.,,,,,,,,,
+datacite:ContactPerson,ContactPerson,"Person with knowledge of how to access, troubleshoot, or otherwise field issues related to the resource.",,,datacite:contributorType,,,,,,
+datacite:DataCollector,DataCollector,Person/institution responsible for finding or gathering/collecting data under the guidelines of the author(s) or Principal Investigator (PI).,,,datacite:contributorType,,,,,,
+datacite:DataCurator,DataCurator,"Person tasked with reviewing, enhancing, cleaning, or standardizing metadata and the associated data submitted for storage, use, and maintenance within a data centre or repository.",,,datacite:contributorType,,,,,,
+datacite:DataManager,DataManager,"Person (or organisation with a staff of data managers, such as a data centre) responsible for maintaining the finished resource.",,,datacite:contributorType,,,,,,
+datacite:Distributor,Distributor,Institution tasked with responsibility to generate/disseminate copies of the resource in either electronic or print form.,,,datacite:contributorType,,,,,,
+datacite:Editor,Editor,A person who oversees the details related to the publication format of the resource.,,,datacite:contributorType,,,,,,
+datacite:HostingInstitution,HostingInstitution,"Typically, the organisation allowing the resource to be available on the internet through the provision of its hardware/software/operating support.",,,datacite:contributorType,,,,,,
+datacite:Producer,Producer,"Typically, a person or organisation responsible for the artistry and form of a media product.",,,datacite:contributorType,,,,,,
+datacite:ProjectLeader,ProjectLeader,Person officially designated as head of project team or sub- project team instrumental in the work necessary to development of the resource.,,,datacite:contributorType,,,,,,
+datacite:ProjectManager,ProjectManager,Person officially designated as manager of a project. Project may consist of one or many project teams and sub-teams.,,,datacite:contributorType,,,,,,
+datacite:ProjectMember,ProjectMember,Person on the membership list of a designated project/project team.,,,datacite:contributorType,,,,,,
+datacite:RegistrationAgency,RegistrationAgency,Institution/organisation officially appointed by a Registration Authority to handle specific tasks within a defined area of responsibility.,,,datacite:contributorType,,,,,,
+datacite:RegistrationAuthority,RegistrationAuthority,A standards-setting body from which Registration Agencies obtain official recognition and guidance.,,,datacite:contributorType,,,,,,
+datacite:RelatedPerson,RelatedPerson,"A person without a specifically defined role in the development of the resource, but who is someone the author wishes to recognize.",,,datacite:contributorType,,,,,,
+datacite:Researcher,Researcher,A person involved in analysing data or the results of an experiment or formal study. May indicate an intern or assistant to one of the authors who helped with research but who was not so “key” as to be listed as an author.,,,datacite:contributorType,,,,,,
+datacite:ResearchGroup,ResearchGroup,"Typically refers to a group of individuals with a lab, department, or division that has a specifically defined focus of activity.",,,datacite:contributorType,,,,,,
+datacite:RightsHolder,RightsHolder,"Person or institution owning or managing property rights, including intellectual property rights over the resource.",,,datacite:contributorType,,,,,,
+datacite:Sponsor,Sponsor,"Person or organisation that issued a contract or under the auspices of which a work has been written, printed, published, developed, etc.",,,datacite:contributorType,,,,,,
+datacite:Supervisor,Supervisor,"Designated administrator over one or more groups/teams working to produce a resource, or over one or more steps of a development process.",,,datacite:contributorType,,,,,,
+datacite:WorkPackageLeader,WorkPackageLeader,"A Work Package is a recognized data product, not all of which is included in publication. The package, instead, may include notes, discarded documents, etc. The Work Package Leader is responsible for ensuring the comprehensive contents, versioning, and availability of the Work Package during the development of the resource.",,,datacite:contributorType,,,,,,
+datacite:OtherContributorType,Other,"Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution is not adequately described by any of the other values for contributorType.",,,datacite:contributorType,,,,,,
+datacite:nameType,nameType,,,,,,,,,,
+datacite:Personal,Personal,,,,datacite:nameType,,,,,,
+datacite:Organizational,Organizational,,,,datacite:nameType,,,,,,
+datacite:titleType,titleType,,,,,,,,,,
+datacite:AlternativeTitle,AlternativeTitle,,,,datacite:titleType,,,,,,
+datacite:Subtitle,Subtitle,,,,datacite:titleType,,,,,,
+datacite:TranslatedTitle,TranslatedTitle,,,,datacite:titleType,,,,,,
+datacite:OtherTitle,Other,,,,datacite:titleType,,,,,,
+datacite:numberType,numberType,,,,,,,,,,
+datacite:Article,Article,,,,datecite:numberType,,,,,,
+datacite:Chapter,Chapter,,,,datecite:numberType,,,,,,
+datacite:Report,Report,,,,datecite:numberType,,,,,,
+datacite:Other,Other,,,,datecite:numberType,,,,,,
+datacite:funderIdentifierType,funderIdentifierType,The type of the funderIdentifier.,,,,,,,,,
+datacite:ISNI,ISNI,,,,datacite:funderIdentifierType,,,,,,
+datacite:GRID,GRID,,,,datacite:funderIdentifierType,,,,,,
+datacite:ROR,ROR,,,,datacite:funderIdentifierType,,,,,,
+datacite:CrossrefFunderID,Crossref Funder ID,,,,datacite:funderIdentifierType,,,,,,
+datacite:OtherFunderIdentifierType,Other,,,,datacite:funderIdentifierType,,,,,,
+datacite:,,,,,,,,,,,
+datacite:,,,,,,,,,,,
+datacite:,,,,,,,,,,,
