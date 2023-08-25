@@ -2,6 +2,7 @@ from gsheets import Sheets
 import pandas as pd
 import os
 import json
+import csv
 
 # Local run only
 # from dotenv import load_dotenv
@@ -29,9 +30,9 @@ txt_delimiter = ","
 
 largest_column_count = 0
 with open(file_name + ".csv", "r") as temp_f:
-    lines = temp_f.readlines()
+    lines = csv.reader(temp_f, delimiter=txt_delimiter)
     for l in lines:
-        column_count = len(l.split(txt_delimiter)) + 1
+        column_count = len(l) + 1
         largest_column_count = (
             column_count
             if largest_column_count < column_count
@@ -46,5 +47,21 @@ df = pd.read_csv(
 )
 df.to_excel(file_name + ".xlsx", index=False, header=False)
 
+# rewrite vocabulary.csv with trailing columns
+with open("vocabulary.csv") as csv_input:
+    csvreader = csv.reader(csv_input, delimiter=txt_delimiter)
+    with open("vocabulary_fixed.csv", "w") as csv_output:
+        csvwriter = csv.writer(csv_output, delimiter=txt_delimiter)
+        for row in csvreader:
+            if len(row) < largest_column_count:
+                num_cols_to_add = largest_column_count - len(row)
+                i = 0
+                while i < num_cols_to_add:
+                    row.append("")
+                    i +=1
+            csvwriter.writerow(row)
+
+os.remove("vocabulary.csv")
+os.rename("vocabulary_fixed.csv", "vocabulary.csv")
 os.remove("client.json")
 os.remove("storage.json")
