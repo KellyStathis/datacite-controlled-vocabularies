@@ -2,16 +2,22 @@ from gsheets import Sheets
 import pandas as pd
 import os
 import json
+from dotenv import load_dotenv
+import openpyxl
 
+load_dotenv()
 
 client = json.loads(os.environ["CLIENT"])
-storage = json.loads(os.environ["STORAGE"])
 
 with open("client.json", "w") as json_file:
     json.dump(client, json_file, indent=4)
 
-with open("storage.json", "w") as json_file:
-    json.dump(storage, json_file, indent=4)
+try:
+    storage = json.loads(os.environ["STORAGE"])
+    with open("storage.json", "w") as json_file:
+        json.dump(storage, json_file, indent=4)
+except:
+    print("No storage file on first run - authenticate in browser.")
 
 
 file_name = os.environ["FILE_NAME"]
