@@ -2,10 +2,10 @@ from gsheets import Sheets
 import pandas as pd
 import os
 import json
-from dotenv import load_dotenv
-import openpyxl
 
-load_dotenv()
+# Local run only
+# from dotenv import load_dotenv
+# load_dotenv()
 
 client = json.loads(os.environ["CLIENT"])
 
