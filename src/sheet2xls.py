@@ -5,8 +5,8 @@ import json
 import csv
 
 # Local run only
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 cwd = os.getcwd()
 if cwd.split("/")[-1] == "src":
