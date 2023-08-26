@@ -3,11 +3,11 @@
 
 [![CI](https://github.com/metadatacenter/datacite-controlled-vocabulary/workflows/Sheet2RDF/badge.svg)](https://github.com/metadatacenter/datacite-controlled-vocabulary/actions?query=workflow%3ASheet2RDF)
 
-# [Datacite Controlled Vocabulary](http://purl.org/datacite/v4.4/)
+# [DataCite Controlled Vocabulary](http://purl.org/datacite/v4.4/)
 
-Controlled vocabularies allow an accurate and controlled approach in describing physical and digital assets (e.g., data). One of such controlled vocabulary is **Datacite Controlled Vocabulary**. This controlled vocabulary is produced based on description of [Datacite Schema V4.4](https://schema.datacite.org/meta/kernel-4.4/). The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which if funded by [RoRi](https://researchonresearch.org/).
+Controlled vocabularies allow an accurate and controlled approach in describing physical and digital assets (e.g., data). One of such controlled vocabulary is **DataCite Controlled Vocabulary**. This controlled vocabulary is produced based on description of [Datacite Schema V4.4](https://schema.datacite.org/meta/kernel-4.4/). The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which if funded by [RoRi](https://researchonresearch.org/).
 
-`sheet2rdf` and `OntoStack`, are used to build and serve **Datacite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
+`sheet2rdf` and `OntoStack`, are used to build and serve **DataCite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
 
 http://purl.org/datacite/v4.4/
 
@@ -35,7 +35,7 @@ In case you want to use **sheet2rdf** in your own work you need to:
 
 2. Create following [Github secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets):
 
-| Secret          | Explanation                                                                                                        | Datacite Controlled Vocabulary                                                                                                                          |
+| Secret          | Explanation                                                                                                        | DataCite Controlled Vocabulary                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DB_USER         | user name of Jena Fuseki user account that has privilages to PUT RDF vocabulary to the database                    | **\*\*\*\***                                                                                                                                            |
 | DB_PASS         | password of for the above account Jena Fuseki account                                                              | **\*\*\*\***                                                                                                                                            |
@@ -45,7 +45,7 @@ In case you want to use **sheet2rdf** in your own work you need to:
 | SPARQL_ENDPOINT | endpoint to which RDF vocabulary is PUT                                                                            | **\*\*\*\***                                                                                                                                            |
 | STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                            |
 | CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json                  | **\*\*\*\***                                                                                                                                            |
-| SAVE_DIR          | location to save output files                  | vocabularies/sheet2rdf   |
+| SAVE_DIR          | location to save output files                  | vocabularies/sheet2rdf/   |
 
 ### Citation
 
