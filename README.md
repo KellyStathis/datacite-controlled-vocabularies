@@ -5,11 +5,13 @@
 
 # [DataCite Controlled Vocabulary](http://purl.org/datacite/v4.5/)
 
-Controlled vocabularies allow an accurate and controlled approach in describing physical and digital assets (e.g., data). One of such controlled vocabulary is **DataCite Controlled Vocabulary**. This controlled vocabulary is produced based on description of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/). The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which if funded by [RoRi](https://researchonresearch.org/).
+This controlled vocabulary is part of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/). 
+
+The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which is funded by [RoRi](https://researchonresearch.org/).
 
 `sheet2rdf` and `OntoStack`, are used to build and serve **DataCite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
 
-http://purl.org/datacite/v4.4/
+http://purl.org/datacite/v4.5/
 
 # Tooling
 
@@ -29,9 +31,7 @@ This workflow is an extension of [excel2rdf](https://github.com/fair-data-collec
 
 In case you want to use **sheet2rdf** in your own work you need to:
 
-1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage:
-
-- When generating credentials, use type "Desktop App" (formerly "Other").
+1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage. (When generating credentials, use type "Desktop App" instead of "Other".)
 
 2. Create following [Github secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets):
 
