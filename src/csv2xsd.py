@@ -3,14 +3,16 @@ import xml.etree.ElementTree as ET
 import os, os.path
 
 def convert_csv_to_xsd():
+
+    # If running locally, move to root directory
     cwd = os.getcwd()
     if cwd.split("/")[-1] == "src":
         os.chdir("..")
-        
+
     for vocabulary_name in ["contributorType", "dateType", "descriptionType", "funderIdentifierType", "nameType", "numberType", "relatedIdentifierType", "resourceTypeGeneral", "relationType", "titleType"]:
 
-        vocabulary_description = "placeholder" # fixme
-        vocabulary_version_history = "placeholder" # fixme
+        vocabulary_description = "placeholder" # fixme - get from definition
+        vocabulary_version_history = "placeholder" # fixme - need a way to pull this in from a separate file
 
         # build xml tree
         schema = ET.Element("xs:schema")
@@ -35,11 +37,13 @@ def convert_csv_to_xsd():
             purl_base = "http://purl.org/datacite/v4.4/"
             include_definitions = False
 
+            # get all the options (children) for the controlled list
             term_dict = {}
             for term in csv_file:
                 if purl_base in term["Parents"] and term["Parents"].split(purl_base)[1].lower() == vocabulary_name.lower():
                     term_dict[term["Preferred Label"]] = term["Definitions"]
 
+            # write options to the xsd in alphabetical order
             for term_value in sorted(term_dict):
                 enumeration = ET.SubElement(restriction, "xs:enumeration")
                 enumeration.set("value", term_value)
