@@ -3,9 +3,9 @@
 
 [![CI](https://github.com/metadatacenter/datacite-controlled-vocabulary/workflows/Sheet2RDF/badge.svg)](https://github.com/metadatacenter/datacite-controlled-vocabulary/actions?query=workflow%3ASheet2RDF)
 
-# [DataCite Controlled Vocabulary](http://purl.org/datacite/v4.4/)
+# [DataCite Controlled Vocabulary](http://purl.org/datacite/v4.5/)
 
-Controlled vocabularies allow an accurate and controlled approach in describing physical and digital assets (e.g., data). One of such controlled vocabulary is **DataCite Controlled Vocabulary**. This controlled vocabulary is produced based on description of [Datacite Schema V4.4](https://schema.datacite.org/meta/kernel-4.4/). The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which if funded by [RoRi](https://researchonresearch.org/).
+Controlled vocabularies allow an accurate and controlled approach in describing physical and digital assets (e.g., data). One of such controlled vocabulary is **DataCite Controlled Vocabulary**. This controlled vocabulary is produced based on description of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/). The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which if funded by [RoRi](https://researchonresearch.org/).
 
 `sheet2rdf` and `OntoStack`, are used to build and serve **DataCite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
 
@@ -41,7 +41,7 @@ In case you want to use **sheet2rdf** in your own work you need to:
 | DB_PASS         | password of for the above account Jena Fuseki account                                                              | **\*\*\*\***                                                                                                                                            |
 | FILE_NAME       | file name that will be used when converting Google sheet to `.ttl` (RDF), `.xlsx`, and `.csv` files                | vocabulary                                                                                                                                              |
 | GRAPH           | graph in the database under which the above RDF vocabulary should be stored                                        | http://purl.org/datacite/v4.4/                                                                                                                          |
-| SHEET_ID        | unique ID of the sheet that will be fetched from Google drive                                                      | [1vmsxnnCRKkKRcJoRRkoQ5499U-IZgKD6ZBtUu41zz1M](https://docs.google.com/spreadsheets/d/1vmsxnnCRKkKRcJoRRkoQ5499U-IZgKD6ZBtUu41zz1M/edit#gid=1198865354) |
+| SHEET_ID        | unique ID of the sheet that will be fetched from Google drive                                                      | [1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU](https://docs.google.com/spreadsheets/d/1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU/edit#gid=1198865354) |
 | SPARQL_ENDPOINT | endpoint to which RDF vocabulary is PUT                                                                            | **\*\*\*\***                                                                                                                                            |
 | STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                            |
 | CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json                  | **\*\*\*\***                                                                                                                                            |
@@ -58,6 +58,10 @@ For any other citation format visit http://doi.org/10.5281/zenodo.4432136
 ### License
 
 This work is licensed under [Apache 2.0 License](https://github.com/niva83/sheet2rdf/blob/main/License.md)
+
+## csv2xsd.py
+
+This script is used to generate the vocabulary specific XSD files necessary for inclusion in the DataCite Metadata Schema defintion.
 
 ## OntoStack
 
