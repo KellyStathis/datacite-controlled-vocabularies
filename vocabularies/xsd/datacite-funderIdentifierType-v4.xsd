@@ -5,6 +5,12 @@
     <xs:annotation>
       <xs:documentation>placeholder</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string" />
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Crossref Funder ID" />
+      <xs:enumeration value="GRID" />
+      <xs:enumeration value="ISNI" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="ROR" />
+    </xs:restriction>
   </xs:simpleType>
 </xs:schema>

@@ -5,11 +5,10 @@ import json
 import csv
 
 # Local run only
-# from dotenv import load_dotenv
-# load_dotenv()
-
 cwd = os.getcwd()
 if cwd.split("/")[-1] == "src":
+    from dotenv import load_dotenv
+    load_dotenv()
     os.chdir("..")
 
 client = json.loads(os.environ["CLIENT"])
@@ -51,23 +50,30 @@ df = pd.read_csv(
 )
 df.to_excel(file_name + ".xlsx", index=False, header=False)
 
-# rewrite vocabulary.csv with trailing columns
+# rewrite vocabulary.csv with trailing columns and without first 17 lines
 with open(file_name + ".csv") as csv_input:
     csvreader = csv.reader(csv_input, delimiter=txt_delimiter)
-    with open(file_name + "_fixed.csv", "w") as csv_output:
+    with open(file_name + "_temp.csv", "w") as csv_output:
         csvwriter = csv.writer(csv_output, delimiter=txt_delimiter)
+        preface_lines = True
         for row in csvreader:
-            if len(row) < largest_column_count:
-                num_cols_to_add = largest_column_count - len(row)
-                i = 0
-                while i < num_cols_to_add:
-                    row.append("")
-                    i +=1
-            csvwriter.writerow(row)
+            if len(row) > 1 and row[0] == "Identifier" and row[1] == "skos:prefLabel@en":
+                # this is the first line that should be written
+                preface_lines = False
+            if preface_lines == False:
+                # once past the preface lines, write lines to new csv with trailing commas
+                if len(row) < largest_column_count:
+                    num_cols_to_add = largest_column_count - len(row)
+                    i = 0
+                    while i < num_cols_to_add:
+                        row.append("")
+                        i +=1
+                csvwriter.writerow(row)
     csv_output.close()
 csv_input.close()
 
 os.remove(file_name + ".csv")
-os.rename(file_name + "_fixed.csv", file_name + ".csv")
+os.rename(file_name + "_temp.csv", file_name + ".csv")
+
 os.remove("client.json")
 os.remove("storage.json")

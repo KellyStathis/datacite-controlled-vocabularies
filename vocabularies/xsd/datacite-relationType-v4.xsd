@@ -7,6 +7,7 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="Cites" />
+      <xs:enumeration value="Collects" />
       <xs:enumeration value="Compiles" />
       <xs:enumeration value="Continues" />
       <xs:enumeration value="Describes" />
@@ -15,6 +16,7 @@
       <xs:enumeration value="HasPart" />
       <xs:enumeration value="HasVersion" />
       <xs:enumeration value="IsCitedBy" />
+      <xs:enumeration value="IsCollectedBy" />
       <xs:enumeration value="IsCompiledBy" />
       <xs:enumeration value="IsContinuedBy" />
       <xs:enumeration value="IsDerivedFrom" />

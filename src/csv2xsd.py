@@ -1,13 +1,17 @@
 import csv
 import xml.etree.ElementTree as ET
 import os, os.path
-
 def convert_csv_to_xsd():
 
     # If running locally, move to root directory
     cwd = os.getcwd()
     if cwd.split("/")[-1] == "src":
+        from dotenv import load_dotenv
+        load_dotenv()
         os.chdir("..")
+
+    directory = os.environ["SAVE_DIR"]
+    file_name = os.environ["FILE_NAME"]
 
     for vocabulary_name in ["contributorType", "dateType", "descriptionType", "funderIdentifierType", "nameType", "numberType", "relatedIdentifierType", "resourceTypeGeneral", "relationType", "titleType"]:
 
@@ -32,16 +36,16 @@ def convert_csv_to_xsd():
         restriction = ET.SubElement(simpleType, "xs:restriction")
         restriction.set("base", "xs:string")
 
-        with open("vocabularies/csv/DATACITE-VOCAB.csv") as file:
+        with open(directory + file_name + ".csv") as file:
             csv_file = csv.DictReader(file)
-            purl_base = "http://purl.org/datacite/v4.4/"
+            namespace = "datacite:"
             include_definitions = False
 
             # get all the options (children) for the controlled list
             term_dict = {}
             for term in csv_file:
-                if purl_base in term["Parents"] and term["Parents"].split(purl_base)[1].lower() == vocabulary_name.lower():
-                    term_dict[term["Preferred Label"]] = term["Definitions"]
+                if namespace in term["skos:broader(separator=\",\")"] and term["skos:broader(separator=\",\")"].split(namespace)[1].lower() == vocabulary_name.lower():
+                    term_dict[term["skos:prefLabel@en"]] = term["skos:definition@en"]
 
             # write options to the xsd in alphabetical order
             for term_value in sorted(term_dict):
@@ -61,7 +65,7 @@ def convert_csv_to_xsd():
 
         # write tree to xsd
         tree = ET.ElementTree(schema)
-        tree.write("vocabularies/xsd/datacite-{}-v4.xsd".format(vocabulary_name), encoding='UTF-8', xml_declaration=True, default_namespace=None, method='xml', short_empty_elements=True)
+        tree.write(directory + "xsd/datacite-{}-v4.xsd".format(vocabulary_name), encoding='UTF-8', xml_declaration=True, default_namespace=None, method='xml', short_empty_elements=True)
 
 
 if __name__ == '__main__':

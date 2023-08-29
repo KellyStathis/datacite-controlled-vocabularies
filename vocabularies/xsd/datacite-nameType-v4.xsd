@@ -5,6 +5,9 @@
     <xs:annotation>
       <xs:documentation>placeholder</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string" />
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Organizational" />
+      <xs:enumeration value="Personal" />
+    </xs:restriction>
   </xs:simpleType>
 </xs:schema>

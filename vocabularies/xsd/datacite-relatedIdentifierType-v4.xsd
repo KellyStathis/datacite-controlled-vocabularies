@@ -9,7 +9,7 @@
       <xs:enumeration value="ARK" />
       <xs:enumeration value="DOI" />
       <xs:enumeration value="EAN13" />
-      <xs:enumeration value="FIXME" />
+      <xs:enumeration value="EISSN" />
       <xs:enumeration value="Handle" />
       <xs:enumeration value="IGSN" />
       <xs:enumeration value="ISBN" />
