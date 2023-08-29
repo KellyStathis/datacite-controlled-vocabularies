@@ -3,3 +3,6 @@
 src/.env
 src/client.json
 src/storage.json
+client.json
+storage.json
+Pipfile.lock
