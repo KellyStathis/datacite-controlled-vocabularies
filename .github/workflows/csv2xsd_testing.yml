@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: CSV2XSD_TEST
+name: CSV2XSD
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -18,7 +18,7 @@ jobs:
   sheet2rdf:
     # The type of runner that the job will run on
     
-    name: CSV2XSD_TEST
+    name: CSV2XSD
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -39,6 +39,12 @@ jobs:
           
       - name: conversion-csv2xsd
         shell: bash -l {0}
+        env:
+          CLIENT: ${{secrets.CLIENT}}
+          STORAGE: ${{secrets.STORAGE}}
+          FILE_NAME: ${{secrets.FILE_NAME}}
+          SHEET_ID: ${{secrets.SHEET_ID}}
+          SAVE_DIR: ${{secrets.SAVE_DIR}}
         run: |
           conda activate csv2xsd
           python ./src/csv2xsd.py
@@ -46,5 +52,5 @@ jobs:
       - name: commit-artifacts
         run: |
           git add .
-          git diff-index --quiet HEAD || git commit -m "new .xsd files from CSV have been generated"
+          git diff-index --quiet HEAD || git commit -m ".csv converted to .xsd files"
           git push
