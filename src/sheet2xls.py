@@ -24,15 +24,19 @@ except:
     print("No storage file on first run - authenticate in browser.")
 
 directory = os.environ["SAVE_DIR"]
-file_name = directory + os.environ["FILE_NAME"]
+file_path = directory + os.environ["FILE_NAME"]
 sheet_id = os.environ["SHEET_ID"]
 sheet_obj = Sheets.from_files("client.json", "storage.json")
 sheet = sheet_obj.get(sheet_id)
-sheet.sheets[0].to_csv(file_name + ".csv", encoding="utf-8", dialect="excel")
+try:
+    sheet.sheets[0].to_csv(file_path + ".csv", encoding="utf-8", dialect="excel")
+except FileNotFoundError as e:
+    print(e)
+    print(file_path + ".csv")
 txt_delimiter = ","
 
 largest_column_count = 0
-with open(file_name + ".csv", "r") as temp_f:
+with open(file_path + ".csv", "r") as temp_f:
     lines = csv.reader(temp_f, delimiter=txt_delimiter)
     for l in lines:
         column_count = len(l) + 1
@@ -46,14 +50,14 @@ temp_f.close()
 
 column_names = [i for i in range(0, largest_column_count)]
 df = pd.read_csv(
-    file_name + ".csv", header=None, delimiter=txt_delimiter, names=column_names
+    file_path + ".csv", header=None, delimiter=txt_delimiter, names=column_names
 )
-df.to_excel(file_name + ".xlsx", index=False, header=False)
+df.to_excel(file_path + ".xlsx", index=False, header=False)
 
 # rewrite vocabulary.csv with trailing columns and without first 17 lines
-with open(file_name + ".csv") as csv_input:
+with open(file_path + ".csv") as csv_input:
     csvreader = csv.reader(csv_input, delimiter=txt_delimiter)
-    with open(file_name + "_temp.csv", "w") as csv_output:
+    with open(file_path + "_temp.csv", "w") as csv_output:
         csvwriter = csv.writer(csv_output, delimiter=txt_delimiter)
         preface_lines = True
         for row in csvreader:
@@ -72,8 +76,8 @@ with open(file_name + ".csv") as csv_input:
     csv_output.close()
 csv_input.close()
 
-os.remove(file_name + ".csv")
-os.rename(file_name + "_temp.csv", file_name + ".csv")
+os.remove(file_path + ".csv")
+os.rename(file_path + "_temp.csv", file_path + ".csv")
 
 os.remove("client.json")
 os.remove("storage.json")
