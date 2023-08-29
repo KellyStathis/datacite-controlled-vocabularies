@@ -28,11 +28,7 @@ file_path = directory + os.environ["FILE_NAME"]
 sheet_id = os.environ["SHEET_ID"]
 sheet_obj = Sheets.from_files("client.json", "storage.json")
 sheet = sheet_obj.get(sheet_id)
-try:
-    sheet.sheets[0].to_csv(file_path + ".csv", encoding="utf-8", dialect="excel")
-except FileNotFoundError as e:
-    print(e)
-    print(file_path + ".csv")
+sheet.sheets[0].to_csv(file_path + ".csv", encoding="utf-8", dialect="excel")
 txt_delimiter = ","
 
 largest_column_count = 0
