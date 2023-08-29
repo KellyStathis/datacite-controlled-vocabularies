@@ -45,7 +45,7 @@ In case you want to use **sheet2rdf** in your own work you need to:
 | SPARQL_ENDPOINT | endpoint to which RDF vocabulary is PUT                                                                            | **\*\*\*\***                                                                                                                                            |
 | STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                            |
 | CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json                  | **\*\*\*\***                                                                                                                                            |
-| SAVE_DIR          | location to save output files                  | vocabularies/sheet2rdf/   |
+| SAVE_DIR          | location to save output files                  | vocabularies/   |
 
 ### Citation
 
