@@ -3,11 +3,17 @@
 
 [![CI](https://github.com/metadatacenter/datacite-controlled-vocabulary/workflows/Sheet2RDF/badge.svg)](https://github.com/metadatacenter/datacite-controlled-vocabulary/actions?query=workflow%3ASheet2RDF)
 
-# [DataCite Controlled Vocabulary](http://purl.org/datacite/v4.5/)
+# DataCite Controlled Vocabularies
 
-This controlled vocabulary is part of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/). 
+This repository hosts the DataCite Controlled Vocabularies that are part of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/), along with scripts used to convert the DataCite Controlled Vocabularies into different formats.
 
-The work of creating this controlled vocabulary is part of [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which is funded by [RoRi](https://researchonresearch.org/).
+There are two workflows contained in this repository:
+
+1. sheet2rdf: Converts a Google Sheet to CSV, XLSX, and TTL files.
+2. csv2xd: Converts the CSV output from sheet2rdf to XSD files.
+
+*The foundations of this work were completed as part of the [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which is funded by [RoRi](https://researchonresearch.org/).*
+
 
 `sheet2rdf` and `OntoStack`, are used to build and serve **DataCite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
 
@@ -17,35 +23,14 @@ http://purl.org/datacite/v4.5/
 
 ## [![DOI](https://zenodo.org/badge/327900313.svg)](https://zenodo.org/badge/latestdoi/327900313) sheet2rdf
 
-This repository hosts automatic workflow, executed by means of Github actions, and underlying shell and python scripts which:
+This repository hosts a modified version of the sheet2rdf automatic workflow, executed by means of GitHub actions, and underlying shell and python scripts which:
 
-- Fetches Google Sheet from Google Drive and stores is as `xlsx` and `csv` files
+- Fetches Google Sheet from Google Drive
+- Stores the Google Sheet as a CSV file (with modifications) and an XLSX file
 - Converts fetched sheet to machine-actionable and FAIR RDF vocabulary using [xls2rdf](https://github.com/sparna-git/xls2rdf)
-- Tests the resulting RDF vocabulary using [qSKOS](https://github.com/cmader/qSKOS/)
 - Commits conversion results and tests logs to this repository
-- and deploy RDF vocabulary to OntoStack to be served to humans and machines
-
+  
 This workflow is an extension of [excel2rdf](https://github.com/fair-data-collective/excel2rdf-template).
-
-### Configuring sheet2rdf
-
-In case you want to use **sheet2rdf** in your own work you need to:
-
-1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage. (When generating credentials, use type "Desktop App" instead of "Other".)
-
-2. Create following [Github secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets):
-
-| Secret          | Explanation                                                                                                        | DataCite Controlled Vocabulary                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DB_USER         | user name of Jena Fuseki user account that has privilages to PUT RDF vocabulary to the database                    | **\*\*\*\***                                                                                                                                            |
-| DB_PASS         | password of for the above account Jena Fuseki account                                                              | **\*\*\*\***                                                                                                                                            |
-| FILE_NAME       | file name that will be used when converting Google sheet to `.ttl` (RDF), `.xlsx`, and `.csv` files                | vocabulary                                                                                                                                              |
-| GRAPH           | graph in the database under which the above RDF vocabulary should be stored                                        | http://purl.org/datacite/v4.4/                                                                                                                          |
-| SHEET_ID        | unique ID of the sheet that will be fetched from Google drive                                                      | [1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU](https://docs.google.com/spreadsheets/d/1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU/edit#gid=1198865354) |
-| SPARQL_ENDPOINT | endpoint to which RDF vocabulary is PUT                                                                            | **\*\*\*\***                                                                                                                                            |
-| STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                            |
-| CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json                  | **\*\*\*\***                                                                                                                                            |
-| SAVE_DIR          | location to save output files                  | vocabularies/   |
 
 ### Citation
 
@@ -59,22 +44,22 @@ For any other citation format visit http://doi.org/10.5281/zenodo.4432136
 
 This work is licensed under [Apache 2.0 License](https://github.com/niva83/sheet2rdf/blob/main/License.md)
 
-## csv2xsd.py
+## csv2xsd
 
-This script is used to generate the vocabulary specific XSD files necessary for inclusion in the DataCite Metadata Schema defintion.
+This workflow and underlying scripts are used to generate the vocabulary specific XSD files necessary for inclusion in the DataCite Metadata Schema defintion.
 
-## OntoStack
+# Configuration
 
-OntoStack is a set of orchestrated micro-services configured and interfaced such that they can intake vocabularies and resolve their terms and RDF properties upon requests either by humans or machines.
+The folloiwng configuration applies to both sheet2rdf and csv2xsd.
 
-Some of OntoStack micro-services are:
+1. Follow [gsheets](https://pypi.org/project/gsheets/) Quickstart and generate client_secrets.json and storage. (When generating credentials, use type "Desktop App" instead of "Other".)
 
-- [Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) a graph database
-- [SKOSMOS](http://www.skosmos.org/) a web-based SKOS browser acting as a front-end for the vocabularies persisted by the graph database
-- [Træfik](https://doc.traefik.io/traefik/) an edge router responsible for proper serving of URL requests
+2. Create the following [GitHub secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets):
 
-Currently three instances of OntoStack are available:
-
-- Departamental instance of [DTU Wind Energy](https://www.vindenergi.dtu.dk/english/): http://data.windenergy.dtu.dk/ontologies
-- National (Danish) instance ran by [DeiC](https://deic.dk/): http://ontology.deic.dk/
-- International instance ran by [FAIR Data Collective](http://fairdatacollective.org/): http://vocab.fairdatacollective.org
+| Secret          | Explanation                                                                                                        | DataCite Controlled Vocabulary                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FILE_NAME       | file name that will be used when converting Google sheet to `.ttl` (RDF), `.xlsx`, and `.csv` files                | vocabulary                                                                                                                                              |
+| SHEET_ID        | unique ID of the sheet that will be fetched from Google drive                                                      | [1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU](https://docs.google.com/spreadsheets/d/1Vz17roE_0_rpcZwI3qKlgxIx7p6OKDNtDM2bmsoorsU/edit#gid=1198865354) |
+| STORAGE         | configuration for client (i.e., sheetrdf) that is fetching Google sheet, content of storage.json | **\*\*\*\***                                                                                                                                                              |
+| CLIENT          | access token to Google Drive hosting Google sheet with controlled terms definitions, content of client_secret.json | **\*\*\*\***                                                                                                                           |
+| SAVE_DIR          | location to save output files                  | vocabularies/   |
