@@ -50,6 +50,8 @@ df = pd.read_csv(
 )
 df.to_excel(file_path + ".xlsx", index=False, header=False)
 
+namespaces = {}
+
 # rewrite vocabulary.csv with trailing columns and without first 17 lines
 with open(file_path + ".csv") as csv_input:
     csvreader = csv.reader(csv_input, delimiter=txt_delimiter)
@@ -57,6 +59,8 @@ with open(file_path + ".csv") as csv_input:
         csvwriter = csv.writer(csv_output, delimiter=txt_delimiter)
         preface_lines = True
         for row in csvreader:
+            if len(row) > 2 and row[0] == "PREFIX":
+                namespaces[row[1]] = row[2]
             if len(row) > 1 and row[0] == "Identifier" and row[1] == "skos:prefLabel@en":
                 # this is the first line that should be written
                 preface_lines = False
@@ -71,6 +75,24 @@ with open(file_path + ".csv") as csv_input:
                 csvwriter.writerow(row)
     csv_output.close()
 csv_input.close()
+
+os.remove(file_path + ".csv")
+os.rename(file_path + "_temp.csv", file_path + ".csv")
+
+# replace namespaces
+with open(file_path + ".csv") as csv_input:
+    csvreader = csv.DictReader(csv_input)
+    with open(file_path + "_temp.csv", "w") as csv_output:
+        csvwriter = csv.DictWriter(csv_output, fieldnames=csvreader.fieldnames, delimiter=txt_delimiter)
+        csvwriter.writeheader()
+        for term in csvreader:
+            for namespace in namespaces.keys():
+                prefix = namespace + ":"
+                if prefix in term["Identifier"]:
+                    term["Identifier"] = term["Identifier"].replace(prefix, namespaces[namespace])
+                if prefix in term["purl_target"]:
+                    term["purl_target"] = term["purl_target"].replace(prefix, namespaces[namespace])
+            csvwriter.writerow(term)
 
 os.remove(file_path + ".csv")
 os.rename(file_path + "_temp.csv", file_path + ".csv")
