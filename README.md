@@ -14,11 +14,6 @@ There are two workflows contained in this repository:
 
 *The foundations of this work were completed as part of the [FAIRware project](https://researchonresearch.org/projects#!/tab/273951116-3) which is funded by [RoRi](https://researchonresearch.org/).*
 
-
-`sheet2rdf` and `OntoStack`, are used to build and serve **DataCite Controlled Vocabulary**, while [PURL](https://archive.org/services/purl/), is used to persist identifiers for the vocabulary:
-
-http://purl.org/datacite/v4.5/
-
 # Tooling
 
 ## [![DOI](https://zenodo.org/badge/327900313.svg)](https://zenodo.org/badge/latestdoi/327900313) sheet2rdf
