@@ -15,7 +15,6 @@ def convert_csv_to_xsd():
 
     for vocabulary_name in ["contributorType", "dateType", "descriptionType", "funderIdentifierType", "nameType", "numberType", "relatedIdentifierType", "resourceTypeGeneral", "relationType", "titleType"]:
 
-        vocabulary_description = "placeholder" # fixme - get from definition
         vocabulary_version_history = "placeholder" # fixme - need a way to pull this in from a separate file
 
         # build xml tree
@@ -31,7 +30,6 @@ def convert_csv_to_xsd():
 
         annotation = ET.SubElement(simpleType, "xs:annotation")
         documentation = ET.SubElement(annotation, "xs:documentation")
-        documentation.text = vocabulary_description
 
         restriction = ET.SubElement(simpleType, "xs:restriction")
         restriction.set("base", "xs:string")
@@ -46,6 +44,8 @@ def convert_csv_to_xsd():
             for term in csv_file:
                 if namespace in term["skos:broader(separator=\",\")"] and term["skos:broader(separator=\",\")"].split(namespace)[1].lower() == vocabulary_name.lower():
                     term_dict[term["skos:prefLabel@en"]] = term["skos:definition@en"]
+                if vocabulary_name == term["skos:prefLabel@en"]:
+                    documentation.text = term["skos:definition@en"]
 
             # write options to the xsd in alphabetical order
             for term_value in sorted(term_dict):
