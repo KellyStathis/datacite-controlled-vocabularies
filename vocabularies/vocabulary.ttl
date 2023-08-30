@@ -11,6 +11,7 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rtd: <https://datacite-metadata-schema.readthedocs.io/en/4.5/> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -37,7 +38,7 @@ datacite:resourceTypeGeneral a skos:Concept;
     datacite:ComputationalNotebook, datacite:ConferencePaper, datacite:ConferenceProceeding,
     datacite:DataPaper, datacite:Dataset, datacite:Dissertation, datacite:Event, datacite:Image,
     datacite:Instrument, datacite:InteractiveResource, datacite:Journal, datacite:JournalArticle,
-    datacite:Model, datacite:Other, datacite:OutputManagementPlan, datacite:PeerReview,
+    datacite:Model, datacite:OtherResourceType, datacite:OutputManagementPlan, datacite:PeerReview,
     datacite:PhysicalObject, datacite:Preprint, datacite:Report, datacite:Service, datacite:Software,
     datacite:Sound, datacite:Standard, datacite:StudyRegistration, datacite:Text, datacite:Workflow;
   skos:prefLabel "resourceTypeGeneral"@en;
@@ -217,8 +218,8 @@ datacite:Workflow a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Workflow"@en .
 
-datacite:Other a skos:Concept;
-  skos:broader datacite:numberType, datacite:resourceTypeGeneral;
+datacite:OtherResourceType a skos:Concept;
+  skos:broader datacite:resourceTypeGeneral;
   skos:definition "If selected, supply a value for ResourceType."@en;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Other"@en .
@@ -863,7 +864,8 @@ datacite:Organizational a skos:Concept;
 datacite:titleType a skos:Concept;
   skos:definition "The type of Title (other than the Main Title)."@en;
   skos:inScheme <http://purl.org/datacite/v4.5>;
-  skos:narrower datacite:AlternativeTitle, datacite:OtherTitle, datacite:Subtitle, datacite:TranslatedTitle;
+  skos:narrower datacite:AlternativeTitle, datacite:OtherTitleType, datacite:Subtitle,
+    datacite:TranslatedTitle;
   skos:prefLabel "titleType"@en;
   skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
@@ -882,7 +884,7 @@ datacite:TranslatedTitle a skos:Concept;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "TranslatedTitle"@en .
 
-datacite:OtherTitle a skos:Concept;
+datacite:OtherTitleType a skos:Concept;
   skos:broader datacite:titleType;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Other"@en .
@@ -890,7 +892,7 @@ datacite:OtherTitle a skos:Concept;
 datacite:numberType a skos:Concept;
   skos:definition "Type of the related item’s number, e.g., report number or article number."@en;
   skos:inScheme <http://purl.org/datacite/v4.5>;
-  skos:narrower datacite:Article, datacite:Chapter, datacite:Other, datacite:Report;
+  skos:narrower datacite:Article, datacite:Chapter, datacite:OtherNumberType, datacite:Report;
   skos:prefLabel "numberType"@en;
   skos:topConceptOf <http://purl.org/datacite/v4.5> .
 
@@ -903,6 +905,11 @@ datacite:Chapter a skos:Concept;
   skos:broader datacite:numberType;
   skos:inScheme <http://purl.org/datacite/v4.5>;
   skos:prefLabel "Chapter"@en .
+
+datacite:OtherNumberType a skos:Concept;
+  skos:broader datacite:numberType;
+  skos:inScheme <http://purl.org/datacite/v4.5>;
+  skos:prefLabel "Other"@en .
 
 datacite:funderIdentifierType a skos:Concept;
   skos:definition "The type of the funderIdentifier."@en;
