@@ -5,9 +5,21 @@
 
 # DataCite Controlled Vocabularies
 
-This repository hosts the DataCite Controlled Vocabularies that are part of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/), along with scripts used to convert the DataCite Controlled Vocabularies into different formats.
+This repository hosts the DataCite Controlled Vocabularies that are part of the [DataCite Metadata Schema](https://datacite-metadata-schema.readthedocs.io/en/4.5/), along with workflows and scripts used to convert the DataCite Controlled Vocabularies into different formats.
 
-There are two workflows contained in this repository:
+There are ten controlled lists represented in this repository in the `vocabularies` directory:
+- contributorType
+- dateType
+- descriptionType
+- funderIdentifierType
+- nameType
+- numberType
+- relatedIdentifierType
+- relationType
+- resourceTypeGeneral
+- titleType
+
+There are two workflows and associated scripts contained in this repository:
 
 1. sheet2rdf: Converts a Google Sheet to CSV, XLSX, and TTL files.
 2. csv2xd: Converts the CSV output from sheet2rdf to XSD files.
